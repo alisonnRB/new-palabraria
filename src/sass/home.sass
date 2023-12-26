@@ -1,0 +1,65 @@
+.box-home
+    height: 100%
+    width: 100%
+    overflow-y: auto
+    background: black
+
+    .comport-carrossel
+        height: 600px
+        width: calc( 100vw - 18px )
+        overflow: hidden
+
+        .foto
+            height: 100%
+            width: 100%
+
+            .infos
+                position: relative
+                height: 50px
+                display: flex
+                flex-direction: column
+                align-items: center
+                justify-content: center
+                margin-bottom: -50px
+                gap: 10px
+                top: 50px
+                left: 30px
+
+                h6
+                    font-size: 1.5em
+                    color: white
+                
+                p
+                    color: white
+
+            img
+                height: 600px
+                width: 100%
+                object-fit: cover
+
+    .arrows
+        height: 400px
+        width: 70px
+        background: #ffffff2d
+        position: absolute
+        left: 20px
+        top: 100px
+        z-index: 50
+        border-radius: 40px
+        display: flex
+        align-items: center
+        justify-content: center
+        cursor: pointer
+
+        &:hover
+            background: #ffffff93
+
+        .seta
+            height: 50px
+            width: 50px
+
+            &.menor
+                transform: rotateY(180deg)
+
+        &.menor
+            left: calc( 100vw - 110px )
