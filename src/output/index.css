@@ -38,19 +38,41 @@ a:link, a:visited {
   position: relative;
   z-index: 100;
 }
-.Home .header .logo {
+.Home .header .content-logo {
   background: black;
   height: 60px;
   width: 60px;
   padding: 30px;
   border-radius: 50%;
   position: relative;
-  top: 20px;
+  top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Home .header .content-logo .logo.close {
+  align-items: flex-end;
+  position: relative;
+  top: 25px;
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
 }
 .Home .header .content-search {
   position: relative;
   top: -5px;
   cursor: pointer;
+  transition: all 0.5s linear;
+}
+.Home .header .content-search.open {
+  animation: search-open 0.5s linear;
+  left: calc(-50vw + 330px);
+  margin-left: -520px;
+}
+.Home .header .content-search.close {
+  animation: search-open 0.5s linear reverse;
+  left: 0;
+  margin-left: 0;
 }
 .Home .header .content-search .lupa, .Home .header .content-search .search {
   height: 20px;
@@ -63,11 +85,28 @@ a:link, a:visited {
 }
 .Home .header .content-search .search {
   border: none;
+  outline: none;
+  font-family: "forum";
+  font-size: 1.2em;
+}
+.Home .header .content-search .search.open {
+  animation: input-box 0.5s linear;
+  padding: 11px;
+  padding-left: 20px;
+  padding-right: 40px;
+  width: 500px;
+  border-radius: 30px;
+}
+.Home .header .content-search .search.close {
+  animation: input-box-close 0.5s linear;
 }
 .Home .header .config {
   height: 40px;
   width: 40px;
   cursor: pointer;
+}
+.Home .header .config.close {
+  visibility: hidden;
 }
 .Home .content-aba-config {
   position: fixed;
@@ -130,6 +169,42 @@ a:link, a:visited {
     width: 0;
   }
 }
+@keyframes search-open {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: calc(-50vw + 360px);
+  }
+}
+@keyframes input-box {
+  0% {
+    width: 20px;
+    padding: 10px;
+    border-radius: 50px;
+  }
+  100% {
+    width: 500px;
+    padding: 11px;
+    padding-left: 20px;
+    padding-right: 40px;
+    border-radius: 30px;
+  }
+}
+@keyframes input-box-close {
+  100% {
+    width: 20px;
+    padding: 10px;
+    border-radius: 50px;
+  }
+  0% {
+    width: 500px;
+    padding: 11px;
+    padding-left: 20px;
+    padding-right: 40px;
+    border-radius: 30px;
+  }
+}
 .box-home {
   height: 100%;
   width: 100vw;
@@ -155,7 +230,7 @@ a:link, a:visited {
   margin-bottom: -50px;
   gap: 10px;
   top: 50px;
-  left: 30px;
+  left: 20px;
 }
 .box-home .comport-carrossel .foto .infos h6 {
   font-size: 1.7em;
