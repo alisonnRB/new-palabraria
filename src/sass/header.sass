@@ -27,6 +27,12 @@
             align-items: center
             justify-content: center
 
+            &.open
+                animation: logo-entre .5s ease
+
+            &.closed
+                animation: logo-sai .5s linear
+
             .logo.close
                 align-items: flex-end
                 position: relative
@@ -39,12 +45,13 @@
             position: relative
             top: -5px
             cursor: pointer
+            margin-left: 0
 
             transition: all .5s linear
 
             &.open
                 animation: search-open .5s linear
-                left: calc( -50vw - -330px )
+                left: calc( -50vw - -350px )
                 margin-left: -520px
 
             &.close
@@ -152,7 +159,7 @@
         left: 0
 
     100%
-        left: calc( -50vw - -360px )
+        left: calc( -50vw - -350px )
 
 @keyframes input-box
     0%
@@ -179,3 +186,21 @@
         padding-left: 20px
         padding-right: 40px
         border-radius: 30px
+
+@keyframes logo-entre
+    50%
+        top: -20px
+        visibility: hidden
+    
+    0% ,100%
+        top: 30px
+        visibility: visible
+
+@keyframes logo-sai
+    50%
+        top: -20px
+        visibility: hidden
+    
+    0% ,100%
+        top: 30px
+        visibility: visible

@@ -50,6 +50,12 @@ a:link, a:visited {
   align-items: center;
   justify-content: center;
 }
+.Home .header .content-logo.open {
+  animation: logo-entre 0.5s ease;
+}
+.Home .header .content-logo.closed {
+  animation: logo-sai 0.5s linear;
+}
 .Home .header .content-logo .logo.close {
   align-items: flex-end;
   position: relative;
@@ -62,11 +68,12 @@ a:link, a:visited {
   position: relative;
   top: -5px;
   cursor: pointer;
+  margin-left: 0;
   transition: all 0.5s linear;
 }
 .Home .header .content-search.open {
   animation: search-open 0.5s linear;
-  left: calc(-50vw + 330px);
+  left: calc(-50vw + 350px);
   margin-left: -520px;
 }
 .Home .header .content-search.close {
@@ -174,7 +181,7 @@ a:link, a:visited {
     left: 0;
   }
   100% {
-    left: calc(-50vw + 360px);
+    left: calc(-50vw + 350px);
   }
 }
 @keyframes input-box {
@@ -203,6 +210,26 @@ a:link, a:visited {
     padding-left: 20px;
     padding-right: 40px;
     border-radius: 30px;
+  }
+}
+@keyframes logo-entre {
+  50% {
+    top: -20px;
+    visibility: hidden;
+  }
+  0%, 100% {
+    top: 30px;
+    visibility: visible;
+  }
+}
+@keyframes logo-sai {
+  50% {
+    top: -20px;
+    visibility: hidden;
+  }
+  0%, 100% {
+    top: 30px;
+    visibility: visible;
   }
 }
 .box-home {

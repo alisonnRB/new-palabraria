@@ -35,7 +35,7 @@ export default function Header() {
             setAnimationSearch(false);
             setSearchOpen(false);
             clearTimeout(timeoutId);
-        }, 490);
+        }, 500);
     };
 
     useEffect(() => {
@@ -46,7 +46,7 @@ export default function Header() {
         <header className="header">
             <img src={config} alt="configurações" className={`config ${searchOpen ? 'close' : null}`} onClick={() => { setConfigaration(true) }} />
 
-            <div className={`content-logo`} onClick={searchOpen ? () => { handleCloseSearch() } : null}><img src={searchOpen ? cancel : logo} alt="logotipo palabraria" className={`logo ${searchOpen ? 'close' : null}`} /></div>
+            <div className={`content-logo ${searchOpen ? 'open' : null} ${animationSearch ? 'closed' : null}`} onClick={searchOpen ? () => { handleCloseSearch() } : null}><img src={searchOpen ? cancel : logo} alt="logotipo palabraria" className={`logo ${searchOpen ? 'close' : null}`} /></div>
 
             <div className={`content-search ${searchOpen ? 'open' : null} ${animationSearch ? 'close' : null}`} onClick={!searchOpen ? () => { setSearchOpen(true); navigate('/Busca') } : null}>
                 <input ref={search} type="text" className={`search ${searchOpen ? 'open' : null} ${animationSearch ? 'close' : null}`} />
