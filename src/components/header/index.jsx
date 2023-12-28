@@ -7,7 +7,7 @@ import lupa from '../../drawble/lupa.png';
 import config from '../../drawble/configuracoes.png';
 import { Link } from "react-router-dom";
 
-export default function Header() {
+export default function Header(props) {
     const navigate = useNavigate();
     const search = useRef(null);
 
@@ -49,7 +49,7 @@ export default function Header() {
             <div className={`content-logo ${searchOpen ? 'open' : null} ${animationSearch ? 'closed' : null}`} onClick={searchOpen ? () => { handleCloseSearch() } : null}><img src={searchOpen ? cancel : logo} alt="logotipo palabraria" className={`logo ${searchOpen ? 'close' : null}`} /></div>
 
             <div className={`content-search ${searchOpen ? 'open' : null} ${animationSearch ? 'close' : null}`} onClick={!searchOpen ? () => { setSearchOpen(true); navigate('/Busca') } : null}>
-                <input ref={search} type="text" className={`search ${searchOpen ? 'open' : null} ${animationSearch ? 'close' : null}`} />
+                <input ref={search} value={props.busca} onChange={(e)=>{props.setBusca(e.target.value)}} type="text" className={`search ${searchOpen ? 'open' : null} ${animationSearch ? 'close' : null}`} />
                 <img src={lupa} alt="pesquisa" className={`lupa ${searchOpen ? 'open' : null}`} />
             </div>
 
