@@ -1,0 +1,206 @@
+.Home
+    height: 100vh
+    width: 100vw
+    overflow-x: hidden
+
+    .header
+        width: calc( 100vw - 100px )
+        height: 100px
+        background: black
+        display: flex
+        justify-content: space-between
+        align-items: center
+        padding-left: 50px
+        padding-right: 50px
+        position: relative
+        z-index: 100
+
+        .content-logo
+            background: black
+            height: 60px
+            width: 60px
+            padding: 30px
+            border-radius: 50%
+            position: relative
+            top: 30px
+            display: flex
+            align-items: center
+            justify-content: center
+
+            &.open
+                animation: logo-entre .5s ease
+
+            &.closed
+                animation: logo-sai .5s linear
+
+            .logo.close
+                align-items: flex-end
+                position: relative
+                top: 25px
+                height: 40px
+                width: 40px
+                cursor: pointer
+
+        .content-search
+            position: relative
+            top: -5px
+            cursor: pointer
+            margin-left: 0
+
+            transition: all .5s linear
+
+            &.open
+                animation: search-open .5s linear
+                left: calc( -50vw - -350px )
+                margin-left: -520px
+
+            &.close
+                animation: search-open .5s linear reverse
+                left: 0
+                margin-left: 0
+
+            .lupa
+                height: 20px
+                width: 20px
+                background-color: white
+                border-radius: 50%
+                padding: 10px
+                margin-left: -40px
+                margin-bottom: -15px
+
+            .search
+                @extend .lupa
+                border: none
+                outline: none
+                font-family: 'forum'
+                font-size: 1.2em
+
+                &.open
+                    animation: input-box .5s linear
+                    padding: 11px
+                    padding-left: 20px
+                    padding-right: 40px
+                    width: 500px
+                    border-radius: 30px
+
+                &.close
+                    animation: input-box-close .5s linear
+
+        .config
+            height: 40px
+            width: 40px
+            cursor: pointer
+
+            &.close
+                visibility: hidden
+
+    .content-aba-config
+        position: fixed
+        height: 100vh
+        width: 100vw
+        top: 0
+        left: 0
+        background-color: #000000bb
+
+        .aba-config
+            height: 100vh
+            width: 350px
+            background: white
+            border-top-right-radius: 10px
+            border-bottom-right-radius: 10px
+            text-decoration: none
+            padding: 20px
+            display: flex
+            flex-direction: column
+            justify-content: center
+            gap: 70px
+            overflow: hidden
+
+            animation: aba .3s linear
+
+            &.open
+                animation: fecha-aba .3s linear
+
+            .rote
+                text-decoration: none
+                color: black
+                font-family: 'forum'
+                font-size: 1.5em
+                font-weight: bold
+                padding-left: 20px
+                padding-right: 20px
+                display: inline-block
+                cursor: pointer
+                padding-bottom: 1px
+                white-space: nowrap
+
+                transition: font-size .3s ease
+
+                &:hover
+                    border-bottom: black solid 1px
+                    font-size: 1.7em
+
+@keyframes aba
+    0%
+        width: 0
+
+    100%
+        width: 350px
+
+@keyframes fecha-aba
+    0%
+        width: 350px
+
+    100%
+        width: 0
+
+@keyframes search-open
+    0%
+        left: 0
+
+    100%
+        left: calc( -50vw - -350px )
+
+@keyframes input-box
+    0%
+        width: 20px
+        padding: 10px
+        border-radius: 50px
+
+    100%
+        width: 500px
+        padding: 11px
+        padding-left: 20px
+        padding-right: 40px
+        border-radius: 30px
+
+@keyframes input-box-close
+    100%
+        width: 20px
+        padding: 10px
+        border-radius: 50px
+
+    0%
+        width: 500px
+        padding: 11px
+        padding-left: 20px
+        padding-right: 40px
+        border-radius: 30px
+
+@keyframes logo-entre
+    50%
+        top: -20px
+        visibility: hidden
+    
+    0% ,100%
+        top: 30px
+        visibility: visible
+
+@keyframes logo-sai
+    50%
+        top: -20px
+        visibility: hidden
+    
+    0% ,100%
+        top: 30px
+        visibility: visible
