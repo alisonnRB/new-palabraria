@@ -57,7 +57,8 @@ export default function Header(props) {
             {configuration ?
                 <div className="content-aba-config" onClick={() => { handleClose() }}>
                     <nav className={`aba-config ${animationConfig ? 'open' : null}`} onClick={(e) => { e.stopPropagation() }}>
-                        <Link ><p className="rote">LOGIN</p></Link>
+                        <Link to='/Login'><p className="rote">LOGIN</p></Link>
+                        <Link ><p className="rote">CADASTRAR USUARIO</p></Link>
                         <Link ><p className="rote">CADASTRAR PALAVRAS</p></Link>
                         <Link ><p className="rote">REQUIRIR UM LOGIN</p></Link>
                         <Link ><p className="rote">MODERAÇÃO</p></Link>
