@@ -160,6 +160,26 @@ a:link, a:visited {
   border-bottom: black solid 1px;
   font-size: 1.7em;
 }
+.Home .login-circle {
+  width: 200px;
+  word-break: break-all;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: 100;
+  left: calc(50% - 80px);
+  top: -100px;
+  animation: login 2s ease;
+}
+.Home .login-circle img {
+  background: #025206;
+  border-radius: 50%;
+}
+.Home .login-circle p {
+  color: white;
+}
 
 @keyframes aba {
   0% {
@@ -231,6 +251,20 @@ a:link, a:visited {
   0%, 100% {
     top: 30px;
     visibility: visible;
+  }
+}
+@keyframes login {
+  0% {
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateY(350px);
+  }
+  80% {
+    transform: translateY(350px);
+  }
+  100% {
+    transform: translateY(0);
   }
 }
 .box-home {
