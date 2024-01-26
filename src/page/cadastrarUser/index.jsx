@@ -26,12 +26,12 @@ export default function CadastrarUser() {
             if (response.data.ok) {
                 setPermitido(true);
             } else {
-                navigate(-1);
+                navigate('/');
             }
 
         } catch (error) {
             console.error('Erro ao enviar requisição:', error);
-            navigate(-1);
+            navigate('/');
         }
     };
 
