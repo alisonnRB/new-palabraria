@@ -546,4 +546,65 @@ a:link, a:visited {
   border-radius: 0 30px 30px 0;
 }
 
+.filter-content-warning {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.3098039216);
+  z-index: 100;
+}
+.filter-content-warning .content-box {
+  height: 450px;
+  width: 700px;
+  background-color: #222222;
+  border-radius: 30px;
+}
+.filter-content-warning .content-box .logo-content {
+  height: 20%;
+  border-bottom: solid white 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.filter-content-warning .content-box .content-msg {
+  color: white;
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+}
+.filter-content-warning .content-box .content-msg p {
+  text-align: center;
+}
+.filter-content-warning .content-box .content-bt {
+  height: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.filter-content-warning .content-box .content-bt .bt {
+  background: black;
+  border: none;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 200px;
+  margin: 50px;
+  border-radius: 30px;
+  font-size: 1.2em;
+}
+.filter-content-warning .content-box .content-bt .bt:hover {
+  background: rgba(0, 0, 0, 0.8549019608);
+  cursor: pointer;
+}
+
 /*# sourceMappingURL=index.css.map */

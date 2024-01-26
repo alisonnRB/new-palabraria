@@ -1,8 +1,11 @@
 import React, {useEffect, useState} from "react";
 
+import Warning from "./warning";
+
 export default function Card(props) {
     const [infos, setInfos] = useState({});
     const [image, setImage] = useState(null);
+    const [dell, setDell] = useState(false);
 
     useEffect(()=>{
         if(props && props.infos){
@@ -26,8 +29,10 @@ export default function Card(props) {
             </span>
             <span className="tres">
                 <div className="bt edit">Editar</div>
-                <div className="bt dell">Excluir</div>
+                <div className="bt dell" onClick={()=>{setDell(true)}}>Excluir</div>
             </span>
+
+            {dell ? <Warning user={infos.user} id={infos.id} setDell={setDell}/> : null}
         </div>
     );
 }
