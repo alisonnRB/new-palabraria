@@ -99,7 +99,7 @@ export default function Header(props) {
                 <div className="content-aba-config" onClick={() => { handleClose() }}>
                     <nav className={`aba-config ${animationConfig ? 'open' : null}`} onClick={(e) => { e.stopPropagation() }}>
                         <Link to='/Login'><p className="rote">LOGIN</p></Link>
-                        {login ? <Link ><p className="rote">USUARIOS</p></Link> : null}
+                        {login ? <Link to='/User'><p className="rote">USUARIOS</p></Link> : null}
                         {login ? <Link ><p className="rote">CADASTRAR PALAVRAS</p></Link> : null}
                         <Link ><p className="rote">REQUIRIR UM LOGIN</p></Link>
                         {tipo == 'admin' ? <Link ><p className="rote">MODERAÇÃO</p></Link> : null}

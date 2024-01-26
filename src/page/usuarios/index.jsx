@@ -61,6 +61,9 @@ export default function Usuarios() {
 
     const gera_card = () => {
         const list = [];
+        if(!permitido){
+            return [];
+        }
 
         for (let i = 0; i < Object.keys(usuarios).length; i++) {
             let item = <Card infos={usuarios[i]} />;
@@ -73,8 +76,8 @@ export default function Usuarios() {
     return (
         <div className="Usuarios">
             <span>
-                <img className="x" src={x} alt="voltar" />
-                <img className="x mais" src={x} alt="mais" />
+                <img className="x" src={x} alt="voltar" onClick={()=>{navigate('/')}}/>
+                <img className="x mais" src={x} alt="mais" onClick={()=>{navigate('/cadastro-user')}}/>
             </span>
 
             <div className="content">

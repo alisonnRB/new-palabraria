@@ -417,6 +417,10 @@ a:link, a:visited {
   position: relative;
   top: 70px;
 }
+.content-login .error {
+  position: relative;
+  top: -25px;
+}
 
 .content.cad {
   position: relative;

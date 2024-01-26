@@ -38,15 +38,24 @@ export default function CadastrarUser() {
 
     const Cadastrar = async (event) => {
         event.preventDefault();
+        const token = sessionStorage.getItem('token');
 
         try {
-            const response = await axios.post('http://localhost/src/controls/login.php', {
+            const response = await axios.post('http://localhost/src/controls/user.php', {
                 user: user,
                 senha: senha,
-                permissao: permissao
+                permition: permissao
+            }, {
+                headers: {
+                    'Authorization': `Bearer ${token}`,
+                    'Content-Type': 'application/json',
+                }
             });
+
             if (!response.data.ok) {
                 setErro(response.data.response);
+            } else {
+                navigate(-1);
             }
         } catch (error) {
             console.error('Erro ao enviar requisição:', error);
@@ -80,7 +89,7 @@ export default function CadastrarUser() {
                     </span>
 
                     <select className="selection" value={permissao} onChange={(e) => { setPermissao(e.target.value) }}>
-                        <option value="" selected>PERMISSÃO</option>
+                        <option value="instituicao" selected>PERMISSÃO</option>
                         <option value="admin">ADMIN</option>
                         <option value="moderador">MODERADOR</option>
                         <option value="instituicao">INSTITUIÇÂO</option>
