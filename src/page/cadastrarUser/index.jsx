@@ -11,7 +11,7 @@ export default function CadastrarUser() {
 
     const [user, setUser] = useState('');
     const [senha, setSenha] = useState('');
-    const [permissao, setPermissao] = useState('');
+    const [permissao, setPermissao] = useState('instituicao');
     const [erro, setErro] = useState('');
 
     const Verify_Auth = async (token) => {

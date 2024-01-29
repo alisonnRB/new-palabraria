@@ -42,6 +42,7 @@ export default function Usuarios() {
 
             if (response.data.ok) {
                 setUsuarios(response.data.response);
+                console.log('oisa');
             }
 
         } catch (error) {
@@ -66,7 +67,7 @@ export default function Usuarios() {
         }
 
         for (let i = 0; i < Object.keys(usuarios).length; i++) {
-            let item = <Card infos={usuarios[i]} />;
+            let item = <Card infos={usuarios[i]} key={i}/>;
             list.push(item);
         }
 
