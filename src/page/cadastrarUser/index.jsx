@@ -89,7 +89,7 @@ export default function CadastrarUser() {
                     </span>
 
                     <select className="selection" value={permissao} onChange={(e) => { setPermissao(e.target.value) }}>
-                        <option value="instituicao" selected>PERMISSÃO</option>
+                        <option value="" selected>PERMISSÃO</option>
                         <option value="admin">ADMIN</option>
                         <option value="moderador">MODERADOR</option>
                         <option value="instituicao">INSTITUIÇÂO</option>

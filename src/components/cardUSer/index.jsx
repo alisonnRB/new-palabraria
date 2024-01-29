@@ -32,7 +32,7 @@ export default function Card(props) {
                 <div className="bt dell" onClick={()=>{setDell(true)}}>Excluir</div>
             </span>
 
-            {dell ? <Warning user={infos.user} id={infos.id} setDell={setDell}/> : null}
+            {dell ? <Warning user={infos.user} id={infos.id} setDell={setDell} setErro={props.setErro} setOpenMsg={props.setOpenMsg}/> : null}
         </div>
     );
 }

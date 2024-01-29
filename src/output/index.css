@@ -463,6 +463,17 @@ a:link, a:visited {
   padding-right: auto;
   padding-left: auto;
 }
+.Usuarios .erro {
+  color: black;
+  font-size: 2em;
+  width: 100%;
+  position: fixed;
+  bottom: 10px;
+  z-index: 200;
+  display: flex;
+  justify-content: center;
+  animation: error-message 2.5s ease-out;
+}
 
 .box-card {
   height: 300px;
@@ -546,6 +557,19 @@ a:link, a:visited {
   border-radius: 0 30px 30px 0;
 }
 
+@keyframes error-message {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-100vh);
+  }
+}
 .filter-content-warning {
   position: fixed;
   top: 0;

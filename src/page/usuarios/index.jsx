@@ -10,6 +10,9 @@ export default function Usuarios() {
     const [permitido, setPermitido] = useState(false);
     const [usuarios, setUsuarios] = useState([]);
 
+    const [erro, setErro] = useState('');
+    const [openMsg, setOpenMsg] = useState(false);
+
     const Verify_Auth = async (token) => {
         try {
             const response = await axios.post('http://localhost/src/controls/login.php', {}, {
@@ -42,7 +45,6 @@ export default function Usuarios() {
 
             if (response.data.ok) {
                 setUsuarios(response.data.response);
-                console.log('oisa');
             }
 
         } catch (error) {
@@ -60,6 +62,17 @@ export default function Usuarios() {
         Search(token);
     }, [])
 
+    useEffect(()=>{
+        if(openMsg){
+            const Timer = setTimeout (()=>{
+                setOpenMsg(false);
+                setErro('');
+
+                return () => clearTimeout(Timer);
+            },2000)
+        }
+    },[openMsg])
+
     const gera_card = () => {
         const list = [];
         if(!permitido){
@@ -67,7 +80,7 @@ export default function Usuarios() {
         }
 
         for (let i = 0; i < Object.keys(usuarios).length; i++) {
-            let item = <Card infos={usuarios[i]} key={i}/>;
+            let item = <Card infos={usuarios[i]} key={i} setErro={setErro} setOpenMsg={setOpenMsg}/>;
             list.push(item);
         }
 
@@ -86,6 +99,8 @@ export default function Usuarios() {
                     {gera_card()}
                 </div>
             </div>
+
+            {openMsg ? <p className="erro">{erro}</p> : null}
         </div>
     );
 }
