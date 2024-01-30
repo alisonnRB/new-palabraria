@@ -631,4 +631,151 @@ a:link, a:visited {
   cursor: pointer;
 }
 
+.content-forms {
+  height: 100vh;
+  width: 100vw;
+}
+.content-forms .barra {
+  display: flex;
+  flex-direction: row;
+  height: 15%;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+}
+.content-forms .barra .box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.content-forms .barra .box .etapa-box {
+  height: 35px;
+  width: 250px;
+  background: grey;
+}
+.content-forms .barra .box .etapa-box.um {
+  border-radius: 30px 0 0 30px;
+}
+.content-forms .barra .box .etapa-box.dois {
+  border-radius: 0 30px 30px 0;
+}
+.content-forms .forms {
+  height: 85%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.content-forms .forms label {
+  margin-left: 20px;
+  font-size: 1.1em;
+}
+.content-forms .forms .prox-bt {
+  color: grey;
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  font-size: 2em;
+  cursor: pointer;
+}
+.content-forms .forms .box-form {
+  height: 95%;
+  width: 90%;
+}
+.content-forms .forms .box-form .content-input {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 20%;
+}
+.content-forms .forms .box-form .content-input span {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.content-forms .forms .box-form .content-input span .label-error {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+}
+.content-forms .forms .box-form .content-input span .label-error p {
+  color: red;
+}
+.content-forms .forms .box-form .content-input span #ESpalavra, .content-forms .forms .box-form .content-input span #PTpalavra {
+  height: 50px;
+  width: 400px;
+  border-radius: 30px;
+  border: none;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-size: 1.2em;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.3411764706);
+}
+.content-forms .forms .content-area {
+  height: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.content-forms .forms .content-area span {
+  height: 80%;
+  width: 1070px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.content-forms .forms .content-area span #desc {
+  min-height: calc(95% - 40px);
+  min-width: calc(100% - 40px);
+  max-height: calc(95% - 40px);
+  max-width: calc(100% - 40px);
+  resize: none;
+  padding: 20px;
+  border: none;
+  border-radius: 30px;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.3411764706);
+  font-size: 1.2em;
+}
+.content-forms .forms .img-content {
+  height: 90%;
+  width: 65%;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  flex-wrap: wrap;
+  column-gap: 100px;
+}
+.content-forms .forms .img-content .content-mais {
+  height: 230px;
+  width: 230px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top: 20px;
+}
+.content-forms .forms .img-content .content-mais .mais {
+  transform: rotate(45deg);
+  cursor: pointer;
+  height: 80px;
+}
+
+input[type=file] {
+  display: none;
+}
+
+.custom-input {
+  cursor: pointer;
+  height: 230px;
+  width: 230px;
+  background-image: url("../drawble/image.png");
+  background-size: contain;
+}
+.custom-input .preview:hover {
+  box-shadow: 0px 0px 20px 0px rgba(255, 13, 13, 0.862745098);
+}
+
 /*# sourceMappingURL=index.css.map */

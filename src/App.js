@@ -6,6 +6,7 @@ import HomePage from "./page/homepage/index";
 import Login from "./page/login";
 import CadastrarUser from "./page/cadastrarUser";
 import Usuarios from "./page/usuarios";
+import CadastrarPalavra from "./page/cadastrar-palavra";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
             <Route exact path='/Login' element={ <Login/> } />
             <Route path="/User" element={<Usuarios />}></Route>
             <Route path='/cadastro-user' element={ <CadastrarUser/> } />
+            <Route path='/cadastro-palavra' element={ <CadastrarPalavra /> } />
         </Routes>
     </Router>
   );
