@@ -4,6 +4,8 @@ import axios from "axios";
 export default function FormulareUM(props) {
     const [ENpalavra, setENpalavra] = useState('');
     const [PTpalavra, setPTpalavra] = useState('');
+    const [campo1, setCampo1] = useState('');
+    const [campo2, setCampo2] = useState('');
     const [desc, setDesc] = useState('');
 
     const [erro, setErro] = useState(false);
@@ -46,6 +48,8 @@ export default function FormulareUM(props) {
         props.form1.current = {
             'ENpalavra': ENpalavra,
             'PTpalavra': PTpalavra,
+            'campo1': campo1,
+            'campo2': campo2,
             'descricao': desc
         }
     }
@@ -73,7 +77,20 @@ export default function FormulareUM(props) {
             </span>
 
             <span className="content-area">
-                <span>
+
+                <span className="content-semantic">
+
+                    <label htmlFor="semantic">Campos Semânticos:</label>
+
+                    <span>
+                        <input type="text" id="semantic" value={campo1} onChange={(e)=>{setCampo1(e.target.value)}}/>
+
+                        <input type="text" value={campo2} onChange={(e)=>{setCampo2(e.target.value)}} placeholder="esse campo é opcional..."/>
+
+                    </span>
+                </span>
+
+                <span className="content-desc">
                     <label htmlFor="desc">Descrição: </label>
                     <textarea id="desc" value={desc} onChange={(e) => { setDesc(e.target.value) }}></textarea>
                 </span>
