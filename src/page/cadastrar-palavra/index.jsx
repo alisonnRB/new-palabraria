@@ -1,4 +1,5 @@
 import React, { useState, useRef } from "react";
+import axios from "axios";
 
 import Form1 from './form/form1';
 import Form2 from './form/form2';
@@ -9,6 +10,33 @@ export default function CadastrarPalavra(props) {
     const form1 = useRef();
     const form2 = useRef();
     const form3 = useRef();
+
+    const Create = async () => {
+        const token = sessionStorage.getItem('token');
+
+        const formularios = new FormData;
+        formularios.append('form1', JSON.stringify(form1.current));
+        formularios.append('form2', form2.current);
+        formularios.append('form3', form3.current);
+
+        try {
+            const response = await axios.post('http://localhost/src/controls/palavra.php', formularios,
+                {
+                    headers: {
+                        'Authorization': `Bearer ${token}`,
+                        'Content-Type': 'multipart/form-data',
+                    }
+                });
+
+                if(!response.data.ok){
+                    console.log(response.data.response);
+                }
+
+        } catch (error) {
+            console.error('Erro ao enviar requisição:', error);
+        }
+    };
+
 
 
     return (
@@ -46,6 +74,8 @@ export default function CadastrarPalavra(props) {
             >
                 CONTINUAR
             </p>
+
+            <button onClick={()=>{Create()}} style={{position: "absolute", height: '100px', width: '100px', background: 'blue'}}>AQUIIII</button>
         </div>
     );
 }
