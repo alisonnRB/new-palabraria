@@ -17,6 +17,8 @@ export default function FormulareTRES(props) {
             'expressao3': expressao3,
             'expressao4': expressao4,
         }
+
+        props.Create();
     }
 
     return (

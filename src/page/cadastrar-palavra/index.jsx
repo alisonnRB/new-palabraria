@@ -14,10 +14,16 @@ export default function CadastrarPalavra(props) {
     const Create = async () => {
         const token = sessionStorage.getItem('token');
 
+
         const formularios = new FormData;
         formularios.append('form1', JSON.stringify(form1.current));
-        formularios.append('form2', form2.current);
-        formularios.append('form3', form3.current);
+
+        for(let i = 0; i<Object.keys(form2.current).length; i++){
+            formularios.append(`image${i}`, form2.current[i]);
+        }
+
+        formularios.append('form3', JSON.stringify(form3.current));
+
 
         try {
             const response = await axios.post('http://localhost/src/controls/palavra.php', formularios,
@@ -64,7 +70,7 @@ export default function CadastrarPalavra(props) {
             <form className="forms">
                 {etapa == 1 ? <Form1 setEtapa={setEtapa} form1={form1} /> : null}
                 {etapa == 2 ? <Form2 setEtapa={setEtapa} form2={form2} /> : null}
-                {etapa == 3 ? <Form3 setEtapa={setEtapa} form3={form3} /> : null}
+                {etapa == 3 ? <Form3 setEtapa={setEtapa} Create={Create} form3={form3} /> : null}
             </form>
 
             <p
@@ -75,7 +81,6 @@ export default function CadastrarPalavra(props) {
                 CONTINUAR
             </p>
 
-            <button onClick={()=>{Create()}} style={{position: "absolute", height: '100px', width: '100px', background: 'blue'}}>AQUIIII</button>
         </div>
     );
 }

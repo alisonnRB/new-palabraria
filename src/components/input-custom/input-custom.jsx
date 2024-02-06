@@ -26,7 +26,7 @@ export default function FormulareDOIS(props) {
         if (file) {
             props.form2.current = {
                 ...props.form2.current,
-                [`image${props.num}`]: file,
+                [props.num]: file,
             };
         }
     }, [file])
@@ -40,7 +40,7 @@ export default function FormulareDOIS(props) {
                     </div>
                 </label>
             </div>
-            <input type="file" id={`editFile${props.num}`} name={`editFile${props.num}`} onChange={handleImageChange} />
+            <input type="file" id={`editFile${props.num}`} name={`editFile${props.num}`} onChange={handleImageChange} accept="image/*" />
         </>
     );
 }
