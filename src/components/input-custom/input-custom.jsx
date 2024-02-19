@@ -20,7 +20,26 @@ export default function FormulareDOIS(props) {
         } else {
             setImagePreview(null);
         }
+
+        props.Save();
     };
+
+    const define = () => {
+        const file = props.form2.current[props.num];
+        setFile(file);
+
+        const reader = new FileReader();
+
+        reader.onloadend = () => {
+            setImagePreview(reader.result);
+        };
+
+        if (file) {
+            reader.readAsDataURL(file);
+        } else {
+            setImagePreview(null);
+        }
+    }
 
     useEffect(() => {
         if (file) {
@@ -30,6 +49,13 @@ export default function FormulareDOIS(props) {
             };
         }
     }, [file])
+
+    useEffect(() => {
+
+        if (props.form2.current) {
+            define();
+        }
+    }, [props.form2])
 
     return (
         <>

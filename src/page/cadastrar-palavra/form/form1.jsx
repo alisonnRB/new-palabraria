@@ -44,6 +44,36 @@ export default function FormulareUM(props) {
         return () => clearTimeout(debounceTimer);
     }, [searchTerm]);
 
+    useEffect(() => {
+        if (props.form1.current) {
+            define();
+        }
+    }, [props.form1]);
+
+    const define = () => {
+        const def = props.form1.current;
+
+        if (def.ENpalavra) {
+            setENpalavra(def.ENpalavra);
+        }
+
+        if (def.PTpalavra) {
+            setPTpalavra(def.PTpalavra);
+        }
+
+        if (def.campo1) {
+            setCampo1(def.campo1);
+        }
+
+        if (def.campo2) {
+            setCampo2(def.campo2);
+        }
+
+        if (def.descricao) {
+            setDesc(def.descricao);
+        }
+    }
+
     const complete = () => {
         props.form1.current = {
             'ENpalavra': ENpalavra,
@@ -52,6 +82,8 @@ export default function FormulareUM(props) {
             'campo2': campo2,
             'descricao': desc
         }
+
+        props.Save();
     }
 
     const handleInputChange = (e) => {
@@ -83,9 +115,9 @@ export default function FormulareUM(props) {
                     <label htmlFor="semantic">Campos Semânticos:</label>
 
                     <span>
-                        <input type="text" id="semantic" value={campo1} onChange={(e)=>{setCampo1(e.target.value)}}/>
+                        <input type="text" id="semantic" value={campo1} onChange={(e) => { setCampo1(e.target.value) }} />
 
-                        <input type="text" value={campo2} onChange={(e)=>{setCampo2(e.target.value)}} placeholder="esse campo é opcional..."/>
+                        <input type="text" value={campo2} onChange={(e) => { setCampo2(e.target.value) }} placeholder="esse campo é opcional..." />
 
                     </span>
                 </span>
@@ -103,6 +135,7 @@ export default function FormulareUM(props) {
             >
                 CONTINUAR
             </p>
+
         </div>
     );
 }

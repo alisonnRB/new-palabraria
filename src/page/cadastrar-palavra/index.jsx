@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import axios from "axios";
 
 import Form1 from './form/form1';
@@ -17,8 +17,8 @@ export default function CadastrarPalavra(props) {
 
         const formularios = new FormData;
         formularios.append('form1', JSON.stringify(form1.current));
-
-        for(let i = 0; i<Object.keys(form2.current).length; i++){
+        
+        for (let i = 0; i < Object.keys(form2.current).length; i++) {
             formularios.append(`image${i}`, form2.current[i]);
         }
 
@@ -34,14 +34,42 @@ export default function CadastrarPalavra(props) {
                     }
                 });
 
-                if(!response.data.ok){
-                    console.log(response.data.response);
-                }
+            if (!response.data.ok) {
+                console.log(response.data.response);
+            } else {
+                sessionStorage.clear('forms');
+            }
 
         } catch (error) {
             console.error('Erro ao enviar requisição:', error);
         }
     };
+
+    const Save = () => {
+        let obj = {
+            'etapa': etapa,
+            'form1': form1.current ? form1.current : '',
+            'form3': form3.current ? form3.current : ''
+        }
+
+        obj = JSON.stringify(obj);
+
+        sessionStorage.setItem('forms', obj);
+
+    }
+
+    useEffect(() => {
+        if (sessionStorage.getItem('forms')) {
+            const forms = JSON.parse(sessionStorage.getItem('forms'));
+
+            form1.current = forms.form1 ? forms.form1 : '';
+            form3.current = forms.form3 ? forms.form3 : '';
+
+            if (forms.etapa) {
+                setEtapa(forms.etapa);
+            }
+        }
+    }, [])
 
 
 
@@ -68,9 +96,9 @@ export default function CadastrarPalavra(props) {
             </span>
 
             <form className="forms">
-                {etapa == 1 ? <Form1 setEtapa={setEtapa} form1={form1} /> : null}
-                {etapa == 2 ? <Form2 setEtapa={setEtapa} form2={form2} /> : null}
-                {etapa == 3 ? <Form3 setEtapa={setEtapa} Create={Create} form3={form3} /> : null}
+                {etapa == 1 ? <Form1 setEtapa={setEtapa} form1={form1} Save={Save} /> : null}
+                {etapa == 2 ? <Form2 setEtapa={setEtapa} form2={form2} Save={Save} /> : null}
+                {etapa == 3 ? <Form3 setEtapa={setEtapa} Create={Create} form3={form3} Save={Save} /> : null}
             </form>
 
             <p
