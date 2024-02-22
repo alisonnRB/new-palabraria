@@ -866,4 +866,70 @@ input[type=file] {
   box-shadow: 0px 0px 20px 0px rgba(255, 13, 13, 0.862745098);
 }
 
+.content-warning {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.3568627451);
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+}
+.content-warning .box {
+  height: 400px;
+  width: 550px;
+  background: white;
+}
+.content-warning .box .logo-box {
+  display: flex;
+  justify-content: center;
+  margin-bottom: -30px;
+}
+.content-warning .box .logo-box .circle-logo {
+  border-radius: 50%;
+  background: white;
+  height: 90px;
+  width: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  bottom: 40px;
+}
+.content-warning .box .text-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  height: 35%;
+}
+.content-warning .box .text-box .message {
+  color: green;
+}
+.content-warning .box .text-box .quest {
+  font-size: 2em;
+}
+.content-warning .box .button-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  height: 50%;
+}
+.content-warning .box .button-box .bt {
+  border: none;
+  border-radius: 30px;
+  background: #B2B2B2;
+  color: white;
+  padding: 5px 10px 5px 10px;
+  width: 300px;
+  height: 40px;
+  font-size: 1em;
+  cursor: pointer;
+}
+
 /*# sourceMappingURL=index.css.map */

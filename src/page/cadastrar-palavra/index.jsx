@@ -5,7 +5,11 @@ import Form1 from './form/form1';
 import Form2 from './form/form2';
 import Form3 from './form/form3';
 
+import Warning from "./warning";
+
 export default function CadastrarPalavra(props) {
+    const [warningOpen, setWarningOpen] = useState(false);
+
     const [etapa, setEtapa] = useState(1);
     const form1 = useRef();
     const form2 = useRef();
@@ -15,12 +19,16 @@ export default function CadastrarPalavra(props) {
         const token = sessionStorage.getItem('token');
 
 
+
         const formularios = new FormData;
         formularios.append('form1', JSON.stringify(form1.current));
-        
-        for (let i = 0; i < Object.keys(form2.current).length; i++) {
-            formularios.append(`image${i}`, form2.current[i]);
+
+        if (form2.current) {
+            for (let i = 0; i < Object.keys(form2.current).length; i++) {
+                formularios.append(`image${i}`, form2.current[i]);
+            }
         }
+
 
         formularios.append('form3', JSON.stringify(form3.current));
 
@@ -35,9 +43,11 @@ export default function CadastrarPalavra(props) {
                 });
 
             if (!response.data.ok) {
-                console.log(response.data.response);
+                console.log(response.data);
             } else {
-                sessionStorage.clear('forms');
+                console.log(response.data);
+                localStorage.clear('forms');
+                setWarningOpen(true);
             }
 
         } catch (error) {
@@ -54,13 +64,13 @@ export default function CadastrarPalavra(props) {
 
         obj = JSON.stringify(obj);
 
-        sessionStorage.setItem('forms', obj);
+        localStorage.setItem('forms', obj);
 
     }
 
     useEffect(() => {
-        if (sessionStorage.getItem('forms')) {
-            const forms = JSON.parse(sessionStorage.getItem('forms'));
+        if (localStorage.getItem('forms')) {
+            const forms = JSON.parse(localStorage.getItem('forms'));
 
             form1.current = forms.form1 ? forms.form1 : '';
             form3.current = forms.form3 ? forms.form3 : '';
@@ -108,6 +118,8 @@ export default function CadastrarPalavra(props) {
             >
                 CONTINUAR
             </p>
+
+            {warningOpen ? <Warning /> : null}
 
         </div>
     );
