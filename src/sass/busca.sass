@@ -1,0 +1,68 @@
+.busca-content
+    min-height: 100%
+    width: 100vw
+    display: flex
+    flex-direction: column
+    align-items: center
+
+    .results-box
+        width: 70vw
+        min-height: 100%
+        padding-bottom: 100px
+        display: flex
+        flex-direction: column
+        align-items: center
+        gap: 40px
+        padding-top: 60px
+        box-shadow: 0px 0px 20px 0px #0000009c
+
+        .view
+            background: pink
+            height: 100px
+            width: 100px
+            display: block
+            position: relative
+            top: 100px
+            margin-top: 100px
+
+.card-content
+    width: 90%
+    height: 250px
+    border-radius: 30px
+    display: flex
+    flex-direction: row
+    background: #F5F5F5
+    box-shadow: -5px 10px 20px 0px #0000009c
+    color: #525252
+
+    img
+        height: 100%
+        width: 25%
+        border-radius: 30px
+
+    .card-text
+        height: 100%
+        width: 75%
+
+        h6
+            height: 20%
+            display: flex
+            align-items: center
+            padding-left: 20px
+            font-size: 2em
+
+        p
+            height: calc( 70% - 20px )
+            padding: 20px
+
+.c-loader
+    animation: is-rotating 1s infinite
+    border: 6px solid #e5e5e5
+    border-radius: 50%
+    border-top-color: #51d4db
+    height: 50px
+    width: 50px
+
+@keyframes is-rotating
+  to 
+    transform: rotate(1turn)
