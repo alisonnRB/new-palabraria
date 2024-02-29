@@ -10,7 +10,10 @@ export default function Search(props) {
     const [load, setLoad] = useState(false);
     const [word, setWord] = useState([]);
 
-    const searchDebounced = async () => {
+    const [noMOre, setNoMore] = useState(false);
+    const [notHave, setNotHave] = useState(false)
+
+    const searchDebounced = async (type = false) => {
 
         try {
 
@@ -21,25 +24,25 @@ export default function Search(props) {
                     }
                 });
 
-            if (load) {
+            if (type) {
                 if (response.data.ok) {
                     setWord((prevState) => [
                         ...prevState,
                         ...response.data.response
                     ]);
-                } else {
-                    setWord([]);
+                }else{
+                    setNoMore(true);
                 }
                 
             }else{
                 if (response.data.ok) {
+                    setNotHave(false);
                     setWord(response.data.response);
                 } else {
                     setWord([]);
+                    setNotHave(true);
                 }
             }
-
-
 
 
         } catch (error) {
@@ -53,6 +56,8 @@ export default function Search(props) {
 
     useEffect(() => {
         const debounceTimer = setTimeout(() => {
+            index.current = 0;
+            setNoMore(false);
             setLoad(false);
             searchDebounced();
         }, 500);
@@ -67,7 +72,8 @@ export default function Search(props) {
 
         if (inView) {
             setLoad(true);
-            searchDebounced();
+            index.current += 6;
+            searchDebounced(true);
         }
     }, [inView])
 
@@ -88,8 +94,11 @@ export default function Search(props) {
 
                 {geraCard()}
 
+                {notHave ? <p className="result">NÂO HÁ RESULTADOS PARA ESSA BUSCA!</p> : null}
 
-                {load ? <div class="c-loader"></div> : null}
+                {noMOre && !notHave ? <p className="result">NÃO HÁ MAIS RESULTADOS!</p> : null}
+
+                {load ? <div className="c-loader"></div> : null}
 
                 <div ref={ref} className="view">
 
