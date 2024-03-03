@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
 * {
   padding: 0;
   margin: 0;
@@ -972,6 +973,10 @@ input[type=file] {
   background: #F5F5F5;
   box-shadow: -5px 10px 20px 0px rgba(0, 0, 0, 0.6117647059);
   color: #525252;
+  cursor: pointer;
+}
+.card-content:hover {
+  background: #ddd9d9;
 }
 .card-content img {
   height: 100%;
@@ -1007,6 +1012,106 @@ input[type=file] {
   to {
     transform: rotate(1turn);
   }
+}
+.Home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+}
+.Home .contents {
+  width: 75vw;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 0px 25px 5px #000;
+  font-family: "Open Sans";
+  padding-bottom: 100px;
+}
+.Home .contents .comport-carrossel {
+  height: 500px;
+  width: 100%;
+  overflow: hidden;
+}
+.Home .contents .comport-carrossel .foto {
+  height: 100%;
+  width: 100%;
+}
+.Home .contents .comport-carrossel .foto img {
+  height: 600px;
+  width: 100%;
+  object-fit: cover;
+}
+.Home .contents .description {
+  width: calc(100% - 60px);
+  padding: 30px;
+}
+.Home .contents .description .palavra {
+  display: flex;
+  flex-direction: column;
+}
+.Home .contents .description .palavra .traducao {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.Home .contents .description .palavra .traducao h3 {
+  font-size: 3em;
+  font-weight: bold;
+}
+.Home .contents .description .palavra .traducao h4 {
+  font-size: 2em;
+  font-weight: lighter;
+}
+.Home .contents .description .palavra .transcricao p {
+  font-size: 1.5em;
+}
+.Home .contents .content-desc {
+  display: flex;
+  flex-direction: column;
+  margin-top: 60px;
+  gap: 20px;
+}
+.Home .contents .content-desc p {
+  font-size: 1.4em;
+  font-weight: bold;
+}
+.Home .contents .content-desc .content-area-desc {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Home .contents .content-desc .content-area-desc .area-desc {
+  border-left: solid black 3px;
+  padding: 10px 0px 10px 55px;
+  width: calc(98% - 57px);
+  height: 80%;
+}
+.Home .contents .content-desc .content-area-desc .area-desc p {
+  font-weight: lighter;
+  font-size: 2em;
+}
+.Home .contents .frases {
+  width: 100%;
+  min-height: 200px;
+  display: flex;
+  margin-top: 60px;
+}
+.Home .contents .frases .balao {
+  box-shadow: -10px 10px 30px 0px rgba(0, 0, 0, 0.7411764706);
+  border-radius: 30px;
+  padding: 30px;
+  min-height: 100px;
+  max-width: 600px;
+  word-break: break-all;
+  margin-left: 50px;
+}
+.Home .contents .frases.s {
+  justify-content: flex-end;
+}
+.Home .contents .frases.s .balao {
+  margin-left: 0;
+  margin-right: 60px;
 }
 
 /*# sourceMappingURL=index.css.map */
