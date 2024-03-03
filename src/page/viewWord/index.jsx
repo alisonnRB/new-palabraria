@@ -1,27 +1,85 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import axios from "axios";
 
 import Headers from '../../components/header/index.jsx'
 import Carousel from "./carrossel/index.jsx";
+import Balao from "./balao/index.jsx";
 
 export default function Word() {
+    const location = useLocation();
+    const [wordId, setWordId] = useState(null)
+    const [infos, setInfos] = useState([]);
+
+    const search = async () => {
+        try {
+
+            const response = await axios.get(`http://localhost/src/controls/search.php?tipo=unic&busca=&index=${wordId}`,
+                {
+                    headers: {
+                        'Content-Type': 'application/json',
+                    }
+                });
+
+            if(response.data.ok){
+                setInfos(response.data.response[0]);
+            }else{
+                console.log('fudeu');
+            }
+
+        } catch (error) {
+            console.error('Erro ao enviar requisição:', error);
+        }
+    }
+
+    useEffect(() => {
+        let id = new URLSearchParams(location.search).get('id');
+        id = JSON.parse(id);
+        if (id) {
+            setWordId(id);
+        }
+    }, [location]);
+
+    useEffect(()=>{
+        if(wordId){
+            search();
+        }
+    },[wordId])
+
+
+    const geraBalao = () => {
+        const list = [];
+        let count = 0;
+
+        for(let i = 1; i<5; i++){
+            if(infos[`expressao${i}`]){
+                count++;
+                let a = <Balao key={i} info={infos[`expressao${i}`]} count={count}/>
+                list.push(a);
+            }
+        }
+
+        return list;
+    }
+
+
     return (
         <div className="Home">
             <Headers />
 
             <div className="contents">
                 <div className="comport-carrossel">
-                    <Carousel />
+                    <Carousel infos={infos}/>
                 </div>
 
                 <section className="description">
                     <div className="palavra">
                         <span className="traducao">
-                            <h3>Sandía</h3>
-                            <h4>/ melancia</h4>
+                            <h3>{infos.palavra}</h3>
+                            <h4>/ {infos.traducao}</h4>
                         </span>
                         <span className="transcricao">
-                            <p>Mel3?cial</p>
+                            <p>{infos.transcricao}</p>
                         </span>
                     </div>
 
@@ -29,47 +87,13 @@ export default function Word() {
                         <p>descrição:</p>
                         <div className="content-area-desc">
                             <span className="area-desc">
-                                <p>La sandía es una planta de la familia de las Cucurbitáceas y también es el nombre de su fruto. Es una enredadera rastrera originaria de África.</p>
+                                <p>{infos.descricao}</p>
                             </span>
                         </div>
                     </div>
                 </section>
 
-                <section className="frases">
-
-                    <div className="balao">
-                        <p>
-                            oiesddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
-                            dffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-                            fgggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggd
-                            oiesddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
-                            dffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-                            fgggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggd
-                            oiesddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
-                            dffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-                            fgggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggd
-                        </p>
-                    </div>
-
-                </section>
-
-                <section className="frases s">
-
-                    <div className="balao">
-                        <p>
-                            oiesddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
-                            dffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-                            fgggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggd
-                            oiesddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
-                            dffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-                            fgggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggd
-                            oiesddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
-                            dffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-                            fgggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggd
-                        </p>
-                    </div>
-
-                </section>
+                {geraBalao()}
 
             </div>
 

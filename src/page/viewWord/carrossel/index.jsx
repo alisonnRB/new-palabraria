@@ -4,22 +4,9 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 
-import img1 from '../../../drawble/países/argentina.jpg';
-import img2 from '../../../drawble/países/bolivia.jpg';
 
-
-
-const Carousel = () => {
+const Carousel = (props) => {
     const slider = React.useRef(null);
-
-    const goToPrevSlide = () => {
-        slider.current.slickPrev();
-    };
-
-    const goToNextSlide = () => {
-        slider.current.slickNext();
-    };
-
 
     const settings = {
         dots: false,
@@ -35,19 +22,25 @@ const Carousel = () => {
         centerMode: false,
     };
 
-    const países = {
-        1: { pais: 'Argentina', capital: 'Buenos Aires' },
-        2: { pais: 'Bolivia', capital: 'Sucre' },
-    };
+    const geraImagens = () => {
+        const list = [];
+
+        for (let i = 1; i < 7; i++) {
+            if (props.infos[`imagem${i}`]) {
+                let a = <div className='foto' key={i}>
+                    <img src={`http://localhost/src/drawble/palavras/${props.infos[`imagem${i}`]}`}/>
+                </div>
+                list.push(a);
+            }
+        }
+
+        return list;
+    }
 
     return (
         <Slider ref={slider} {...settings}>
-            <div className='foto'>
-                <img src={img1} alt="Imagem 1" />
-            </div>
-            <div className='foto'>
-                <img src={img2} alt="Imagem 2" />
-            </div>
+
+            {geraImagens()}
 
         </Slider>
     );

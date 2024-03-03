@@ -1003,7 +1003,7 @@ input[type=file] {
   animation: is-rotating 1s infinite;
   border: 6px solid #e5e5e5;
   border-radius: 50%;
-  border-top-color: #51d4db;
+  border-top-color: #191d1d;
   height: 50px;
   width: 50px;
 }
@@ -1101,10 +1101,14 @@ input[type=file] {
   box-shadow: -10px 10px 30px 0px rgba(0, 0, 0, 0.7411764706);
   border-radius: 30px;
   padding: 30px;
-  min-height: 100px;
+  min-height: 50px;
+  min-width: 200px;
   max-width: 600px;
   word-break: break-all;
   margin-left: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .Home .contents .frases.s {
   justify-content: flex-end;

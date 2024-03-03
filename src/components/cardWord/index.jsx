@@ -1,6 +1,8 @@
 import React, {useEffect, useState} from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function CardWord(props) {
+    const navigate = useNavigate();
     const [image, setImage] = useState('');
 
     useEffect(()=>{
@@ -10,7 +12,7 @@ export default function CardWord(props) {
     },[props.infos]);
 
     return (
-        <div className="card-content">
+        <div className="card-content" onClick={()=>{navigate(`/Busca/palavra?id=${encodeURIComponent(JSON.stringify(props.infos.id))}`)}}>
             <img src={image} alt="" />
 
             <div className="card-text">
