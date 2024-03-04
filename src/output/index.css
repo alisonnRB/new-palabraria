@@ -964,7 +964,7 @@ input[type=file] {
   margin-top: 2em;
 }
 
-.card-content {
+.card-content-word {
   width: 90%;
   height: 250px;
   border-radius: 30px;
@@ -975,26 +975,26 @@ input[type=file] {
   color: #525252;
   cursor: pointer;
 }
-.card-content:hover {
+.card-content-word:hover {
   background: #ddd9d9;
 }
-.card-content img {
+.card-content-word img {
   height: 100%;
   width: 25%;
   border-radius: 30px;
 }
-.card-content .card-text {
+.card-content-word .card-text {
   height: 100%;
   width: 75%;
 }
-.card-content .card-text h6 {
+.card-content-word .card-text h6 {
   height: 20%;
   display: flex;
   align-items: center;
   padding-left: 20px;
   font-size: 2em;
 }
-.card-content .card-text p {
+.card-content-word .card-text p {
   height: calc(70% - 20px);
   padding: 20px;
 }

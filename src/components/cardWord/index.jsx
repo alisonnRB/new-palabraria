@@ -12,7 +12,7 @@ export default function CardWord(props) {
     },[props.infos]);
 
     return (
-        <div className="card-content" onClick={()=>{navigate(`/Busca/palavra?id=${encodeURIComponent(JSON.stringify(props.infos.id))}`)}}>
+        <div className="card-content-word" onClick={()=>{navigate(`/Busca/palavra?id=${encodeURIComponent(JSON.stringify(props.infos.id))}`)}}>
             <img src={image} alt="" />
 
             <div className="card-text">
