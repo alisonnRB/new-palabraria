@@ -8,6 +8,7 @@ import CadastrarUser from "./page/cadastrarUser";
 import Usuarios from "./page/usuarios";
 import CadastrarPalavra from "./page/cadastrar-palavra";
 import ViewWord from './page/viewWord/index';
+import Moder from './page/moderacao/index'
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
             <Route path='/cadastro-user' element={ <CadastrarUser/> } />
             <Route path='/cadastro-palavra' element={ <CadastrarPalavra /> } />
             <Route path='/Busca/palavra' element={<ViewWord />}/>
+            <Route path='/Moder' element={<Moder />}/>
         </Routes>
     </Router>
   );

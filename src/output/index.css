@@ -1118,4 +1118,55 @@ input[type=file] {
   margin-right: 60px;
 }
 
+.header-moder {
+  width: calc(100vw - 100px);
+  height: 100px;
+  background: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 50px;
+  padding-right: 50px;
+  position: relative;
+  z-index: 100;
+}
+.header-moder .bd-type {
+  background: black;
+  color: white;
+  border: none;
+  font-size: 1.3em;
+  padding-right: 20px;
+}
+.header-moder .search {
+  border: none;
+  outline: none;
+  font-family: "forum";
+  font-size: 1.2em;
+  padding: 11px;
+  padding-left: 20px;
+  padding-right: 40px;
+  width: 400px;
+  border-radius: 30px;
+}
+.header-moder .not-box {
+  width: 100px;
+}
+
+.content-moder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.content-moder .search-box {
+  width: 70vw;
+  min-height: 100%;
+  padding-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  padding-top: 60px;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.6117647059);
+}
+
 /*# sourceMappingURL=index.css.map */
