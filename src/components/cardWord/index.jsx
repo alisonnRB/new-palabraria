@@ -11,8 +11,16 @@ export default function CardWord(props) {
         }
     },[props.infos]);
 
+    const handelClicked = () => {
+        if(props.mode && props.mode == "moder"){
+            navigate(`/Moder/palavra?id=${encodeURIComponent(JSON.stringify(props.infos.id))}`)
+        }else{
+            navigate(`/Busca/palavra?id=${encodeURIComponent(JSON.stringify(props.infos.id))}`)
+        }
+    }
+
     return (
-        <div className="card-content-word" onClick={()=>{navigate(`/Busca/palavra?id=${encodeURIComponent(JSON.stringify(props.infos.id))}`)}}>
+        <div className="card-content-word" onClick={()=>{handelClicked()}}>
             <img src={image} alt="" />
 
             <div className="card-text">
