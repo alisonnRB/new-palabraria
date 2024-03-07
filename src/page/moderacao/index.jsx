@@ -85,7 +85,7 @@ export default function Moder() {
         const list = [];
 
         for (let i = 0; i < Object.keys(word).length; i++) {
-            const iten = <CardWord key={i} infos={word[i]} mode={"moder"}/>
+            const iten = <CardWord key={i} infos={word[i]} mode={"moder"} tipo={bd}/>
             list.push(iten);
         }
 

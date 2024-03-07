@@ -13,7 +13,7 @@ export default function CardWord(props) {
 
     const handelClicked = () => {
         if(props.mode && props.mode == "moder"){
-            navigate(`/Moder/palavra?id=${encodeURIComponent(JSON.stringify(props.infos.id))}`)
+            navigate(`/Moder/palavra?id=${encodeURIComponent(JSON.stringify(props.infos.id))}&type=${encodeURIComponent(JSON.stringify(props.tipo))}`)
         }else{
             navigate(`/Busca/palavra?id=${encodeURIComponent(JSON.stringify(props.infos.id))}`)
         }
