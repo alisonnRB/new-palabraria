@@ -120,7 +120,7 @@ export default function Word() {
 
                 <div className="options-c" onClick={(e)=>{e.stopPropagation()}} onMouseLeave={()=>{setOptions(false)}}>
                     <p>APAGAR</p>
-                    <p onClick={()=>{navigate("/Moder/palavra/Update")}}>ALTERAR</p>
+                    <p onClick={()=>{navigate(`/Moder/palavra/Update?id=${encodeURIComponent(JSON.stringify(wordId))}&type=${encodeURIComponent(JSON.stringify(type))}`)}}>ALTERAR</p>
                     <p>APROVAR</p>
                 </div>
 
