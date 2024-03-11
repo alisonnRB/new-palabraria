@@ -13,6 +13,8 @@ export default function Update() {
     const [type, setType] = useState('');
     const [wordId, setWordId] = useState(null)
 
+    const [op, setOp] = useState(1);
+
     const search = async () => {
         try {
 
@@ -66,17 +68,17 @@ export default function Update() {
 
                 <div className="option">
                     <p>Palavra</p>
-                    <div className="bt-op"></div>
+                    <div className="bt-op" onClick={()=>{setOp(1)}} style={op == 1 ? {background: "black"} : null}></div>
                 </div>
 
                 <div className="option">
                     <p>Imagens</p>
-                    <div className="bt-op"></div>
+                    <div className="bt-op" onClick={()=>{setOp(2)}} style={op == 2 ? {background: "black"} : null}></div>
                 </div>
 
                 <div className="option">
                     <p>Outros</p>
-                    <div className="bt-op"></div>
+                    <div className="bt-op" onClick={()=>{setOp(3)}} style={op == 3 ? {background: "black"} : null}></div>
                 </div>
 
                 <div className="not-visible"></div>
@@ -84,7 +86,7 @@ export default function Update() {
 
             <div className="update-content">
 
-                <Word infos={infos}/>
+                {op == 1 ? <Word infos={infos} type={type}/> : null }
 
             </div>
 
