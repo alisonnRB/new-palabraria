@@ -25,6 +25,10 @@ export default function FormulareDOIS(props) {
     };
 
     const define = () => {
+        if (props.type == "update") {
+            return
+        }
+
         const file = props.form2.current[props.num];
         setFile(file);
 
@@ -56,6 +60,18 @@ export default function FormulareDOIS(props) {
             define();
         }
     }, [props.form2])
+
+    useEffect(() => {
+        if (props.type && props.type == "update" && props.search && props.search.current) {
+            const name = props.search.current[props.num];
+            if (name) {
+                const image = "http://localhost/src/drawble/palavras/" + name;
+                setImagePreview(image);
+            }
+
+        }
+    }, [props.search])
+
 
     return (
         <>

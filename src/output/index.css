@@ -821,7 +821,8 @@ a:link, a:visited {
   box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.3411764706);
   font-size: 1.2em;
 }
-.content-forms .forms .img-content {
+
+.img-content {
   height: 90%;
   width: 65%;
   margin: auto;
@@ -831,7 +832,7 @@ a:link, a:visited {
   flex-wrap: wrap;
   column-gap: 100px;
 }
-.content-forms .forms .img-content .content-mais {
+.img-content .content-mais {
   height: 230px;
   width: 230px;
   display: flex;
@@ -840,7 +841,7 @@ a:link, a:visited {
   position: relative;
   top: 20px;
 }
-.content-forms .forms .img-content .content-mais .mais {
+.img-content .content-mais .mais {
   transform: rotate(45deg);
   cursor: pointer;
   height: 80px;

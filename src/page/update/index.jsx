@@ -5,6 +5,7 @@ import { useLocation } from "react-router-dom";
 import seta from '../../drawble/seta-esquerda.png';
 
 import Word from "./word/index";
+import Image from "./images/index";
 
 export default function Update() {
     const location = useLocation();
@@ -87,6 +88,7 @@ export default function Update() {
             <div className="update-content">
 
                 {op == 1 ? <Word infos={infos} type={type}/> : null }
+                {op == 2 ? <Image infos={infos} type={type}/> : null }
 
             </div>
 
