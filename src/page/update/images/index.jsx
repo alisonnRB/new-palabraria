@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import axios from "axios";
 
 import Custom from '../../../components/input-custom/input-custom';
@@ -25,7 +25,7 @@ export default function UpadteImage(props) {
         const list = {
             "mode" : 2,
             "id" : props.infos.id,
-            "type" : props.infos.type
+            "type" : props.type
         }
 
         form.append("form", JSON.stringify(list))
@@ -33,7 +33,7 @@ export default function UpadteImage(props) {
         if (Image.current) {
             for (let i = 1; i < 7; i++) {
                 if (Image.current[i]) {
-                    form.append(`image${i}`, Image.current[i]);
+                    form.append(`imagem${i}`, Image.current[i]);
                 }
             }
         }
@@ -47,10 +47,11 @@ export default function UpadteImage(props) {
                     }
                 });
 
-            if (!response.data.ok) {
-                console.log(response.data);
+            if (response.data.ok) {
+                props.search();
             } else {
-                console.log(response.data);
+                props.setErro(response.data.response);
+                props.setOpenMsg(true);
             }
 
         } catch (error) {

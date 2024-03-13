@@ -464,7 +464,8 @@ a:link, a:visited {
   padding-right: auto;
   padding-left: auto;
 }
-.Usuarios .erro {
+
+.erro {
   color: black;
   font-size: 2em;
   width: 100%;
@@ -983,6 +984,7 @@ input[type=file] {
   height: 100%;
   width: 25%;
   border-radius: 30px;
+  object-fit: fill;
 }
 .card-content-word .card-text {
   height: 100%;

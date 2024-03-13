@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useLocation } from "react-router-dom";
 
@@ -9,6 +9,9 @@ import Image from "./images/index";
 
 export default function Update() {
     const location = useLocation();
+    const [erro, setErro] = useState('');
+    const [openMsg, setOpenMsg] = useState('');
+
     const [infos, setInfos] = useState([]);
 
     const [type, setType] = useState('');
@@ -59,27 +62,38 @@ export default function Update() {
             search();
         }
     }, [wordId, type])
-    
+
+    useEffect(() => {
+        if (openMsg) {
+            const Timer = setTimeout(() => {
+                setOpenMsg(false);
+                setErro('');
+
+                return () => clearTimeout(Timer);
+            }, 2000)
+        }
+    }, [openMsg])
+
     return (
         <div className="content-update-itens">
 
             <span className="options-update">
 
-                <img src={seta} className="comeback"/>
+                <img src={seta} className="comeback" />
 
                 <div className="option">
                     <p>Palavra</p>
-                    <div className="bt-op" onClick={()=>{setOp(1)}} style={op == 1 ? {background: "black"} : null}></div>
+                    <div className="bt-op" onClick={() => { setOp(1) }} style={op == 1 ? { background: "black" } : null}></div>
                 </div>
 
                 <div className="option">
                     <p>Imagens</p>
-                    <div className="bt-op" onClick={()=>{setOp(2)}} style={op == 2 ? {background: "black"} : null}></div>
+                    <div className="bt-op" onClick={() => { setOp(2) }} style={op == 2 ? { background: "black" } : null}></div>
                 </div>
 
                 <div className="option">
                     <p>Outros</p>
-                    <div className="bt-op" onClick={()=>{setOp(3)}} style={op == 3 ? {background: "black"} : null}></div>
+                    <div className="bt-op" onClick={() => { setOp(3) }} style={op == 3 ? { background: "black" } : null}></div>
                 </div>
 
                 <div className="not-visible"></div>
@@ -87,8 +101,10 @@ export default function Update() {
 
             <div className="update-content">
 
-                {op == 1 ? <Word infos={infos} type={type}/> : null }
-                {op == 2 ? <Image infos={infos} type={type}/> : null }
+                {op == 1 ? <Word infos={infos} type={type} search={search} setErro={setErro} setOpenMsg={setOpenMsg} /> : null}
+                {op == 2 ? <Image infos={infos} type={type} search={search} setErro={setErro} setOpenMsg={setOpenMsg} /> : null}
+
+                {openMsg ? <p className="erro">{erro}</p> : null}
 
             </div>
 

@@ -45,9 +45,10 @@ export default function Word(props) {
                 });
 
             if (response.data.ok) {
-                console.log("saved")
+                props.search();
             } else {
-                console.log("not saved")
+                props.setErro(response.data.response);
+                props.openMsg(true);
             }
         } catch (error) {
             console.log("houve erro na requisiçao")
@@ -91,9 +92,12 @@ export default function Word(props) {
                     <label htmlFor="desc">Descrição: </label>
                     <textarea id="desc" value={desc} onChange={(e) => { setDesc(e.target.value) }}></textarea>
                 </span>
+                
             </span>
 
             <img src={save} className="button-save" onClick={()=>{Update()}}/>
+
+            
 
         </form>
     );
