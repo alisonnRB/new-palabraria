@@ -689,23 +689,24 @@ a:link, a:visited {
   font-size: 2em;
   cursor: pointer;
 }
-.content-forms .forms .box-form {
+
+.box-form {
   height: 95%;
   width: 90%;
 }
-.content-forms .forms .box-form .content-transc {
+.box-form .content-transc {
   height: 25%;
   width: 70%;
   margin: auto;
   display: flex;
   align-items: center;
 }
-.content-forms .forms .box-form .content-transc .content-label {
+.box-form .content-transc .content-label {
   display: flex;
   flex-direction: column;
   gap: 30px;
 }
-.content-forms .forms .box-form .content-transc .content-label input {
+.box-form .content-transc .content-label input {
   height: 50px;
   width: 400px;
   border-radius: 30px;
@@ -715,7 +716,7 @@ a:link, a:visited {
   font-size: 1.2em;
   box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.3411764706);
 }
-.content-forms .forms .box-form .content-expres {
+.box-form .content-expres {
   height: 50%;
   width: 70%;
   display: flex;
@@ -727,7 +728,7 @@ a:link, a:visited {
   row-gap: 10px;
   margin: auto;
 }
-.content-forms .forms .box-form .content-expres input {
+.box-form .content-expres input {
   height: 50px;
   width: 400px;
   border-radius: 30px;
@@ -737,28 +738,28 @@ a:link, a:visited {
   font-size: 1.2em;
   box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.3411764706);
 }
-.content-forms .forms .box-form .content-input {
+.box-form .content-expres .content-input {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
   height: 20%;
 }
-.content-forms .forms .box-form .content-input span {
+.box-form .content-expres .content-input span {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
-.content-forms .forms .box-form .content-input span .label-error {
+.box-form .content-expres .content-input span .label-error {
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 20px;
 }
-.content-forms .forms .box-form .content-input span .label-error p {
+.box-form .content-expres .content-input span .label-error p {
   color: red;
 }
-.content-forms .forms .box-form .content-input span #ESpalavra, .content-forms .forms .box-form .content-input span #PTpalavra {
+.box-form .content-expres .content-input span #ESpalavra, .box-form .content-expres .content-input span #PTpalavra {
   height: 50px;
   width: 400px;
   border-radius: 30px;
@@ -768,24 +769,24 @@ a:link, a:visited {
   font-size: 1.2em;
   box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.3411764706);
 }
-.content-forms .forms .content-area {
+.box-form .content-expres .content-area {
   height: 80%;
   display: flex;
   align-items: center;
   justify-content: space-around;
 }
-.content-forms .forms .content-area .content-semantic {
+.box-form .content-expres .content-area .content-semantic {
   height: 80%;
   width: 40%;
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
-.content-forms .forms .content-area .content-semantic label {
+.box-form .content-expres .content-area .content-semantic label {
   position: relative;
   left: 20%;
 }
-.content-forms .forms .content-area .content-semantic input {
+.box-form .content-expres .content-area .content-semantic input {
   height: 50px;
   width: 400px;
   border-radius: 30px;
@@ -795,7 +796,7 @@ a:link, a:visited {
   font-size: 1.2em;
   box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.3411764706);
 }
-.content-forms .forms .content-area .content-semantic span {
+.box-form .content-expres .content-area .content-semantic span {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -803,14 +804,14 @@ a:link, a:visited {
   margin-right: 20px;
   height: 95%;
 }
-.content-forms .forms .content-area .content-desc {
+.box-form .content-expres .content-area .content-desc {
   height: 80%;
   width: 40%;
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
-.content-forms .forms .content-area .content-desc #desc {
+.box-form .content-expres .content-area .content-desc #desc {
   min-height: calc(80% - 40px);
   min-width: calc(100% - 40px);
   max-height: calc(80% - 40px);
@@ -1363,6 +1364,66 @@ input[type=file] {
   right: 30px;
   padding: 15px;
   cursor: pointer;
+}
+
+.content-rigth {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.content-rigth .box-rigth {
+  background: black;
+  height: 250px;
+  width: 300px;
+}
+.content-rigth .box-rigth .circle-logo {
+  height: 25%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.content-rigth .box-rigth .circle-logo img {
+  background: black;
+  height: 50px;
+  width: 50px;
+  padding: 10px;
+  border-radius: 50%;
+  position: relative;
+  bottom: 10px;
+}
+.content-rigth .box-rigth .message-content {
+  height: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.content-rigth .box-rigth .message-content p {
+  color: white;
+  font-size: 1.2em;
+}
+.content-rigth .box-rigth .bt-content {
+  height: 35%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.content-rigth .box-rigth .bt-content .bt {
+  background: white;
+  border: none;
+  border-radius: 30px;
+  height: 30px;
+  width: 80px;
+}
+.content-rigth .box-rigth .bt-content .bt:hover {
+  background: #7bec46;
+  cursor: pointer;
+  box-shadow: 0px 0px 15px 0px #7bec46;
 }
 
 /*# sourceMappingURL=index.css.map */

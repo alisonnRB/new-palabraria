@@ -6,6 +6,9 @@ import seta from '../../drawble/seta-esquerda.png';
 
 import Word from "./word/index";
 import Image from "./images/index";
+import Others from "./others";
+
+import Alrigth from "./alrigth";
 
 export default function Update() {
     const location = useLocation();
@@ -18,6 +21,8 @@ export default function Update() {
     const [wordId, setWordId] = useState(null)
 
     const [op, setOp] = useState(1);
+
+    const [isSave, setIsSave] = useState(false)
 
     const search = async () => {
         try {
@@ -101,12 +106,15 @@ export default function Update() {
 
             <div className="update-content">
 
-                {op == 1 ? <Word infos={infos} type={type} search={search} setErro={setErro} setOpenMsg={setOpenMsg} /> : null}
-                {op == 2 ? <Image infos={infos} type={type} search={search} setErro={setErro} setOpenMsg={setOpenMsg} /> : null}
+                {op == 1 ? <Word infos={infos} type={type} search={search} setErro={setErro} setOpenMsg={setOpenMsg} setIsSave={setIsSave}/> : null}
+                {op == 2 ? <Image infos={infos} type={type} search={search} setErro={setErro} setOpenMsg={setOpenMsg} setIsSave={setIsSave}/> : null}
+                {op == 3 ? <Others infos={infos} type={type} search={search} setErro={setErro} setOpenMsg={setOpenMsg} setIsSave={setIsSave}/> : null}
 
                 {openMsg ? <p className="erro">{erro}</p> : null}
 
             </div>
+
+            {isSave ? <Alrigth setIsSave={setIsSave}/> : null}
 
         </div>
     );

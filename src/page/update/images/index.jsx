@@ -49,6 +49,7 @@ export default function UpadteImage(props) {
 
             if (response.data.ok) {
                 props.search();
+                props.setIsSave(true);
             } else {
                 props.setErro(response.data.response);
                 props.setOpenMsg(true);

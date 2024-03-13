@@ -46,12 +46,13 @@ export default function Word(props) {
 
             if (response.data.ok) {
                 props.search();
+                props.setIsSave(true);
             } else {
                 props.setErro(response.data.response);
                 props.openMsg(true);
             }
         } catch (error) {
-            console.log("houve erro na requisiçao")
+            console.log(error)
         }
 
 
