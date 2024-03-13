@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 import seta from '../../drawble/seta-esquerda.png';
 
@@ -12,6 +12,8 @@ import Alrigth from "./alrigth";
 
 export default function Update() {
     const location = useLocation();
+    const navigate = useNavigate();
+
     const [erro, setErro] = useState('');
     const [openMsg, setOpenMsg] = useState('');
 
@@ -84,7 +86,7 @@ export default function Update() {
 
             <span className="options-update">
 
-                <img src={seta} className="comeback" />
+                <img src={seta} className="comeback" onClick={()=>{navigate(-1)}}/>
 
                 <div className="option">
                     <p>Palavra</p>
