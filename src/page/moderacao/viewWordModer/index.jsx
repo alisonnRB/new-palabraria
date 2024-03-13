@@ -6,6 +6,9 @@ import Headers from '../../../components/header/index.jsx'
 import Carousel from "../../viewWord/carrossel/index.jsx";
 import Balao from "../../viewWord/balao/index.jsx";
 
+import Delete from "./delete/index.jsx";
+import Aprove from "./aprove/index.jsx";
+
 export default function Word() {
     const location = useLocation();
     const navigate = useNavigate();
@@ -14,6 +17,9 @@ export default function Word() {
     const [infos, setInfos] = useState([]);
 
     const [options, setOptions] = useState(false)
+
+    const [deletes, setDeletes] = useState(false);
+    const [aprove, setAprove] = useState(false);
 
     const search = async () => {
         try {
@@ -119,12 +125,15 @@ export default function Word() {
             {options ?
 
                 <div className="options-c" onClick={(e)=>{e.stopPropagation()}} onMouseLeave={()=>{setOptions(false)}}>
-                    <p>APAGAR</p>
+                    <p onClick={()=>{setDeletes(true)}}>APAGAR</p>
                     <p onClick={()=>{navigate(`/Moder/palavra/Update?id=${encodeURIComponent(JSON.stringify(wordId))}&type=${encodeURIComponent(JSON.stringify(type))}`)}}>ALTERAR</p>
-                    <p>APROVAR</p>
+                    <p onClick={()=>{setAprove(true)}}>APROVAR</p>
                 </div>
 
                 : null}
+
+                {deletes ? <Delete setDeletes={setDeletes} id={wordId} type={type}/> : null}
+                {aprove ? <Aprove setAprove={setAprove} id={wordId} type={type}/> : null}
 
         </div>
     );
