@@ -1,8 +1,10 @@
 import React, {useEffect, useState} from "react";
+import { useNavigate } from "react-router-dom";
 
 import Warning from "./warning";
 
 export default function Card(props) {
+    const navigate = useNavigate();
     const [infos, setInfos] = useState({});
     const [image, setImage] = useState(null);
     const [dell, setDell] = useState(false);
@@ -28,7 +30,7 @@ export default function Card(props) {
                 <div className="nome">{infos && infos.tipo ? infos.tipo : null}</div>
             </span>
             <span className="tres">
-                <div className="bt edit">Infos</div>
+                <div className="bt edit" onClick={()=>{navigate(`/User/infos?id=${encodeURIComponent(JSON.stringify(infos.id))}`)}}>Infos</div>
                 <div className="bt dell" onClick={()=>{setDell(true)}}>Excluir</div>
             </span>
 

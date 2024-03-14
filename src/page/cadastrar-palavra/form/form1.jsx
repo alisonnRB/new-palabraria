@@ -95,7 +95,7 @@ export default function FormulareUM(props) {
         <div className="box-form">
             <span className="content-input">
                 <span>
-                    <span className="label-error">
+                    <span className="label-errors">
                         <label htmlFor="ESpalavra">Palavra em espanhol:</label>
                         {erromsg && ENpalavra ? <p style={erro ? { color: 'green' } : { color: 'red' }}>* {erromsg}</p> : null}
                     </span>

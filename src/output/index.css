@@ -750,15 +750,6 @@ a:link, a:visited {
   flex-direction: column;
   gap: 10px;
 }
-.box-form .content-expres .content-input span .label-error {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 20px;
-}
-.box-form .content-expres .content-input span .label-error p {
-  color: red;
-}
 .box-form .content-expres .content-input span #ESpalavra, .box-form .content-expres .content-input span #PTpalavra {
   height: 50px;
   width: 400px;
@@ -853,6 +844,16 @@ a:link, a:visited {
   margin-left: 16.3%;
   position: relative;
   top: 45px;
+}
+
+.label-errors {
+  display: flex;
+  flex-direction: row !important;
+  align-items: center;
+  gap: 20px;
+}
+.label-errors p {
+  color: red;
 }
 
 input[type=file] {
@@ -1489,6 +1490,69 @@ input[type=file] {
   width: 130px;
   background: black;
   color: white;
+}
+
+.infos-user {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  overflow-x: hidden;
+}
+.infos-user .seta-content {
+  height: 5%;
+  width: 100vw;
+  display: flex;
+  justify-content: start;
+}
+.infos-user .seta-content img {
+  position: relative;
+  left: 20px;
+  cursor: pointer;
+}
+.infos-user .user {
+  min-height: 230px;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  border-bottom: solid #B2B2B2 2px;
+  margin-bottom: 30px;
+}
+.infos-user .user img {
+  min-height: 80px;
+  min-width: 80px;
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  border: solid #B2B2B2 2px;
+  box-shadow: 0px 0px 10px 0px #000;
+}
+.infos-user .user p {
+  font-size: 1.3em;
+}
+.infos-user .content-cards {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  padding-bottom: 30px;
+}
+.infos-user .content-cards p {
+  width: 100%;
+}
+.infos-user .content-cards .nothing {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.2em;
+  color: #B2B2B2;
+  margin-bottom: 50px;
 }
 
 /*# sourceMappingURL=index.css.map */
