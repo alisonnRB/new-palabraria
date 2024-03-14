@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import axios from "axios";
 
-import Headers from '../../components/header/index.jsx'
+import Headers from './header/index.jsx';
 import Carousel from "./carrossel/index.jsx";
 import Balao from "./balao/index.jsx";
 
