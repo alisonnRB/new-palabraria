@@ -15,8 +15,6 @@ export default function Delete(props) {
 
             if(response.data.ok){
                 navigate(-1);
-            }else{
-                console.log(response.data)
             }
 
     }

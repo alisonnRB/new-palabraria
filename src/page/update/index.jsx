@@ -60,8 +60,6 @@ export default function Update() {
 
             if (response.data.ok) {
                 setInfos(response.data.response[0]);
-            } else {
-                console.log('fudeu');
             }
 
         } catch (error) {

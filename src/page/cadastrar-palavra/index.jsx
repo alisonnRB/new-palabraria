@@ -66,16 +66,13 @@ export default function CadastrarPalavra(props) {
                     }
                 });
 
-            if (!response.data.ok) {
-                console.log(response.data);
-            } else {
-                console.log(response.data);
+            if (response.data.ok) {
                 localStorage.clear('forms');
                 setWarningOpen(true);
             }
 
         } catch (error) {
-            console.error('Erro ao enviar requisição:', error);
+            console.error('Erro ao enviar requisição:');
         }
     };
 

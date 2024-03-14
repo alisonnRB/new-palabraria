@@ -56,7 +56,7 @@ export default function Word(props) {
                 props.setOpenMsg(true);
             }
         } catch (error) {
-            console.log(error)
+            console.log("error")
         }
 
 

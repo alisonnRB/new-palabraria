@@ -33,12 +33,10 @@ export default function Word() {
 
             if (response.data.ok) {
                 setInfos(response.data.response[0]);
-            } else {
-                console.log('fudeu');
-            }
+            } 
 
         } catch (error) {
-            console.error('Erro ao enviar requisição:', error);
+            console.error('Erro ao enviar requisição:');
         }
     }
 
@@ -47,7 +45,6 @@ export default function Word() {
         id = JSON.parse(id);
         let tipo = new URLSearchParams(location.search).get('type');
         tipo = JSON.parse(tipo);
-        console.log(tipo)
 
         if (tipo && tipo == "mod") {
             setType("unic_mod")

@@ -52,7 +52,7 @@ export default function Others(props) {
                 props.setOpenMsg(true);
             }
         } catch (error) {
-            console.log(error)
+            console.log("error")
         }
 
 
