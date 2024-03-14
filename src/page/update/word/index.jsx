@@ -23,6 +23,9 @@ export default function Word(props) {
 
     const Update = async () => {
         try {
+
+            const token = sessionStorage.getItem('token'); 
+
             const form = {
                 "mode": 1,
                 "id": props.infos.id,
@@ -40,6 +43,7 @@ export default function Word(props) {
             const response = await axios.post(`http://localhost/src/controls/update.php`, formData,
                 {
                     headers: {
+                        'Authorization': `Bearer ${token}`,
                         'Content-Type': 'multipart/form-data',
                     }
                 });
@@ -49,7 +53,7 @@ export default function Word(props) {
                 props.setIsSave(true);
             } else {
                 props.setErro(response.data.response);
-                props.openMsg(true);
+                props.setOpenMsg(true);
             }
         } catch (error) {
             console.log(error)

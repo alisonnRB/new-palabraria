@@ -1,12 +1,15 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useLayoutEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 import Header from "./header";
 import CardWord from "../../components/cardWord/index"
 
 
 export default function Moder() {
+    const navigate = useNavigate();
+    const [permitido, setPermitido] = useState(true);
     const [busca, setBusca] = useState('');
     const [bd, setBd] = useState('mod');
 
@@ -17,7 +20,28 @@ export default function Moder() {
 
     const [noMOre, setNoMore] = useState(false);
     const [notHave, setNotHave] = useState(false)
-    
+
+    const Verify_Auth = async (token) => {
+        try {
+            const response = await axios.post('http://localhost/src/controls/login.php', {}, {
+                headers: {
+                    'Authorization': `Bearer ${token}`,
+                    'Content-Type': 'application/json',
+                }
+            });
+
+            if (response.data.ok) {
+                setPermitido(true);
+            } else {
+                navigate('/');
+            }
+
+        } catch (error) {
+            console.error('Erro ao enviar requisição:', error);
+            navigate('/');
+        }
+    };
+
     const searchDebounced = async (type = false) => {
         try {
 
@@ -57,6 +81,11 @@ export default function Moder() {
 
     };
 
+    useLayoutEffect(() => {
+        const token = sessionStorage.getItem("token");
+        Verify_Auth(token);
+    }, [])
+
 
     useEffect(() => {
         const debounceTimer = setTimeout(() => {
@@ -85,7 +114,7 @@ export default function Moder() {
         const list = [];
 
         for (let i = 0; i < Object.keys(word).length; i++) {
-            const iten = <CardWord key={i} infos={word[i]} mode={"moder"} tipo={bd}/>
+            const iten = <CardWord key={i} infos={word[i]} mode={"moder"} tipo={bd} />
             list.push(iten);
         }
 

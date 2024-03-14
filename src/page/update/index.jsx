@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useLayoutEffect } from "react";
 import axios from "axios";
 import { useLocation, useNavigate } from "react-router-dom";
 
@@ -13,6 +13,7 @@ import Alrigth from "./alrigth";
 export default function Update() {
     const location = useLocation();
     const navigate = useNavigate();
+    const [permitido, setPermitido] = useState(true);
 
     const [erro, setErro] = useState('');
     const [openMsg, setOpenMsg] = useState('');
@@ -24,7 +25,28 @@ export default function Update() {
 
     const [op, setOp] = useState(1);
 
-    const [isSave, setIsSave] = useState(false)
+    const [isSave, setIsSave] = useState(false);
+
+    const Verify_Auth = async (token) => {
+        try {
+            const response = await axios.post('http://localhost/src/controls/login.php', {}, {
+                headers: {
+                    'Authorization': `Bearer ${token}`,
+                    'Content-Type': 'application/json',
+                }
+            });
+
+            if (response.data.ok) {
+                setPermitido(true);
+            } else {
+                navigate('/');
+            }
+
+        } catch (error) {
+            console.error('Erro ao enviar requisição:', error);
+            navigate('/');
+        }
+    };
 
     const search = async () => {
         try {
@@ -79,14 +101,19 @@ export default function Update() {
                 return () => clearTimeout(Timer);
             }, 2000)
         }
-    }, [openMsg])
+    }, [openMsg]);
+
+    useLayoutEffect(() => {
+        const token = sessionStorage.getItem("token");
+        Verify_Auth(token);
+    }, [])
 
     return (
         <div className="content-update-itens">
 
             <span className="options-update">
 
-                <img src={seta} className="comeback" onClick={()=>{navigate(-1)}}/>
+                <img src={seta} className="comeback" onClick={() => { navigate(-1) }} />
 
                 <div className="option">
                     <p>Palavra</p>
@@ -108,15 +135,15 @@ export default function Update() {
 
             <div className="update-content">
 
-                {op == 1 ? <Word infos={infos} type={type} search={search} setErro={setErro} setOpenMsg={setOpenMsg} setIsSave={setIsSave}/> : null}
-                {op == 2 ? <Image infos={infos} type={type} search={search} setErro={setErro} setOpenMsg={setOpenMsg} setIsSave={setIsSave}/> : null}
-                {op == 3 ? <Others infos={infos} type={type} search={search} setErro={setErro} setOpenMsg={setOpenMsg} setIsSave={setIsSave}/> : null}
+                {op == 1 ? <Word infos={infos} type={type} search={search} setErro={setErro} setOpenMsg={setOpenMsg} setIsSave={setIsSave} /> : null}
+                {op == 2 ? <Image infos={infos} type={type} search={search} setErro={setErro} setOpenMsg={setOpenMsg} setIsSave={setIsSave} /> : null}
+                {op == 3 ? <Others infos={infos} type={type} search={search} setErro={setErro} setOpenMsg={setOpenMsg} setIsSave={setIsSave} /> : null}
 
                 {openMsg ? <p className="erro">{erro}</p> : null}
 
             </div>
 
-            {isSave ? <Alrigth setIsSave={setIsSave}/> : null}
+            {isSave ? <Alrigth setIsSave={setIsSave} /> : null}
 
         </div>
     );

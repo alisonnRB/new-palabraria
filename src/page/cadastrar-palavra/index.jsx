@@ -1,4 +1,5 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useLayoutEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 import Form1 from './form/form1';
@@ -8,12 +9,35 @@ import Form3 from './form/form3';
 import Warning from "./warning";
 
 export default function CadastrarPalavra(props) {
+    const navigate = useNavigate();
     const [warningOpen, setWarningOpen] = useState(false);
+    const [permitido, setPermitido] = useState(false);
 
     const [etapa, setEtapa] = useState(1);
     const form1 = useRef();
     const form2 = useRef();
     const form3 = useRef();
+
+    const Verify_Auth = async (token) => {
+        try {
+            const response = await axios.post('http://localhost/src/controls/login.php', {}, {
+                headers: {
+                    'Authorization': `Bearer ${token}`,
+                    'Content-Type': 'application/json',
+                }
+            });
+
+            if (response.data.ok) {
+                setPermitido(true);
+            } else {
+                navigate('/');
+            }
+
+        } catch (error) {
+            console.error('Erro ao enviar requisição:', error);
+            navigate('/');
+        }
+    };
 
     const Create = async () => {
         const token = sessionStorage.getItem('token');
@@ -80,6 +104,11 @@ export default function CadastrarPalavra(props) {
             }
         }
     }, [])
+
+    useLayoutEffect(()=>{
+        const token = sessionStorage.getItem("token");
+        Verify_Auth(token);
+    },[])
 
 
 

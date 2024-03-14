@@ -1230,6 +1230,7 @@ input[type=file] {
   object-fit: fill;
   position: relative;
   top: 20px;
+  cursor: pointer;
 }
 .content-update-itens .options-update {
   height: 15%;
