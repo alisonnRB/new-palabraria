@@ -28,7 +28,7 @@ export default function Card(props) {
                 <div className="nome">{infos && infos.tipo ? infos.tipo : null}</div>
             </span>
             <span className="tres">
-                <div className="bt edit">Editar</div>
+                <div className="bt edit">Infos</div>
                 <div className="bt dell" onClick={()=>{setDell(true)}}>Excluir</div>
             </span>
 

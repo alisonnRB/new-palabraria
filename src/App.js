@@ -11,6 +11,7 @@ import ViewWord from './page/viewWord/index';
 import Moder from './page/moderacao/index';
 import ViewWordModer from './page/moderacao/viewWordModer/index';
 import Update from "./page/update";
+import UserInfos from "./page/userInfos";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
             <Route path='/Moder/palavra/Update' element={<Update />} />
             <Route path='/Moder/palavra' element={<ViewWordModer />}/>
             <Route path='/Moder' element={<Moder />}/>
+            <Route path='/User/infos' element={<UserInfos />} />
         </Routes>
     </Router>
   );
