@@ -51,6 +51,7 @@ a:link, a:visited {
   display: flex;
   align-items: center;
   justify-content: center;
+  left: -15px;
 }
 .Home .header .content-logo.open {
   animation: logo-entre 0.5s ease;
@@ -166,13 +167,30 @@ a:link, a:visited {
   flex-direction: column;
   justify-content: center;
   gap: 70px;
-  overflow: hidden;
   transform-origin: left;
   animation: aba 0.3s linear;
 }
 @media (orientation: portrait) {
   .Home .content-aba-config .aba-config {
     width: 70%;
+  }
+}
+@media ((min-width: 720px) and (max-width: 959px) and (orientation: landscape)) {
+  .Home .content-aba-config .aba-config {
+    font-size: 0.9em;
+    gap: 30px;
+  }
+}
+@media ((min-width: 480px) and (max-width: 719px) and (orientation: landscape)) {
+  .Home .content-aba-config .aba-config {
+    font-size: 0.7em;
+    gap: 20px;
+  }
+}
+@media ((min-width: 0) and (max-width: 479px) and (orientation: landscape)) {
+  .Home .content-aba-config .aba-config {
+    font-size: 0.5em;
+    gap: 10px;
   }
 }
 .Home .content-aba-config .aba-config.open {
@@ -328,7 +346,6 @@ a:link, a:visited {
   margin-bottom: -50px;
   gap: 10px;
   top: 50px;
-  left: 20px;
 }
 .box-home .comport-carrossel .foto .infos h6 {
   font-size: 1.7em;
@@ -397,6 +414,30 @@ a:link, a:visited {
     border-radius: 0;
   }
 }
+@media ((min-width: 720px) and (max-width: 959px) and (orientation: landscape)) {
+  .content-login .card-login {
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+    box-shadow: none;
+  }
+}
+@media ((min-width: 480px) and (max-width: 719px) and (orientation: landscape)) {
+  .content-login .card-login {
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+    box-shadow: none;
+  }
+}
+@media ((min-width: 0) and (max-width: 479px) and (orientation: landscape)) {
+  .content-login .card-login {
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+    box-shadow: none;
+  }
+}
 .content-login .card-login .logo {
   height: 15%;
   display: flex;
@@ -404,6 +445,21 @@ a:link, a:visited {
   align-items: flex-end;
   position: relative;
   top: 30px;
+}
+@media ((min-width: 720px) and (max-width: 959px) and (orientation: landscape)) {
+  .content-login .card-login .logo {
+    display: none;
+  }
+}
+@media ((min-width: 480px) and (max-width: 719px) and (orientation: landscape)) {
+  .content-login .card-login .logo {
+    display: none;
+  }
+}
+@media ((min-width: 0) and (max-width: 479px) and (orientation: landscape)) {
+  .content-login .card-login .logo {
+    display: none;
+  }
 }
 .content-login .card-login .logo img {
   height: 100%;
@@ -415,6 +471,21 @@ a:link, a:visited {
   align-items: center;
   justify-content: center;
   gap: 8%;
+}
+@media ((min-width: 720px) and (max-width: 959px) and (orientation: landscape)) {
+  .content-login .card-login .content {
+    height: 100%;
+  }
+}
+@media ((min-width: 480px) and (max-width: 719px) and (orientation: landscape)) {
+  .content-login .card-login .content {
+    height: 100%;
+  }
+}
+@media ((min-width: 0) and (max-width: 479px) and (orientation: landscape)) {
+  .content-login .card-login .content {
+    height: 100%;
+  }
 }
 .content-login .card-login .content .input-box {
   display: flex;
@@ -506,12 +577,40 @@ a:link, a:visited {
 }
 .Usuarios .content .card-content {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 50px;
   padding-right: auto;
   padding-left: auto;
 }
 @media (orientation: portrait) {
+  .Usuarios .content .card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    margin-top: 30px;
+  }
+}
+@media ((min-width: 1200px) and (orientation: landscape)) {
+  .Usuarios .content .card-content {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media ((min-width: 720px) and (max-width: 959px) and (orientation: landscape)) {
+  .Usuarios .content .card-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media ((min-width: 480px) and (max-width: 719px) and (orientation: landscape)) {
+  .Usuarios .content .card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    margin-top: 30px;
+  }
+}
+@media ((min-width: 0) and (max-width: 479px) and (orientation: landscape)) {
   .Usuarios .content .card-content {
     display: flex;
     flex-direction: column;
@@ -702,6 +801,21 @@ a:link, a:visited {
   align-items: center;
   justify-content: center;
 }
+@media ((min-width: 720px) and (max-width: 959px) and (orientation: landscape)) {
+  .content-forms .barra {
+    height: 80px;
+  }
+}
+@media ((min-width: 480px) and (max-width: 719px) and (orientation: landscape)) {
+  .content-forms .barra {
+    height: 80px;
+  }
+}
+@media ((min-width: 0) and (max-width: 479px) and (orientation: landscape)) {
+  .content-forms .barra {
+    height: 80px;
+  }
+}
 .content-forms .barra .box {
   display: flex;
   flex-direction: column;
@@ -716,6 +830,21 @@ a:link, a:visited {
 @media (orientation: portrait) {
   .content-forms .barra .box .etapa-box {
     width: 110px;
+  }
+}
+@media ((min-width: 720px) and (max-width: 959px) and (orientation: landscape)) {
+  .content-forms .barra .box .etapa-box {
+    width: 200px;
+  }
+}
+@media ((min-width: 480px) and (max-width: 719px) and (orientation: landscape)) {
+  .content-forms .barra .box .etapa-box {
+    width: 150px;
+  }
+}
+@media ((min-width: 720px) and (max-width: 959px) and (orientation: landscape)) {
+  .content-forms .barra .box .etapa-box {
+    width: 130px;
   }
 }
 .content-forms .barra .box .etapa-box.um {
@@ -754,6 +883,39 @@ a:link, a:visited {
     right: 0;
   }
 }
+@media ((min-width: 720px) and (max-width: 959px) and (orientation: landscape)) {
+  .content-forms .forms .prox-bt {
+    position: relative;
+    height: 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    right: 0;
+  }
+}
+@media ((min-width: 480px) and (max-width: 719px) and (orientation: landscape)) {
+  .content-forms .forms .prox-bt {
+    position: relative;
+    height: 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    right: 0;
+  }
+}
+@media ((min-width: 0) and (max-width: 479px) and (orientation: landscape)) {
+  .content-forms .forms .prox-bt {
+    position: relative;
+    height: 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    right: 0;
+  }
+}
 .content-forms .forms .volt-bt {
   color: grey;
   position: absolute;
@@ -763,6 +925,39 @@ a:link, a:visited {
   cursor: pointer;
 }
 @media (orientation: portrait) {
+  .content-forms .forms .volt-bt {
+    position: relative;
+    height: 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 0;
+  }
+}
+@media ((min-width: 720px) and (max-width: 959px) and (orientation: landscape)) {
+  .content-forms .forms .volt-bt {
+    position: relative;
+    height: 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 0;
+  }
+}
+@media ((min-width: 480px) and (max-width: 719px) and (orientation: landscape)) {
+  .content-forms .forms .volt-bt {
+    position: relative;
+    height: 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 0;
+  }
+}
+@media ((min-width: 0) and (max-width: 479px) and (orientation: landscape)) {
   .content-forms .forms .volt-bt {
     position: relative;
     height: 100px;
@@ -788,7 +983,7 @@ a:link, a:visited {
 }
 .box-form .content-transc {
   height: 25%;
-  width: 70%;
+  width: 80%;
   margin: auto;
   display: flex;
   align-items: center;
@@ -798,10 +993,57 @@ a:link, a:visited {
     width: 100% !important;
   }
 }
+@media ((min-width: 960px) and (max-width: 1199px) and (orientation: landscape)) {
+  .box-form .content-transc {
+    justify-content: center;
+  }
+}
+@media ((min-width: 720px) and (max-width: 959px) and (orientation: landscape)) {
+  .box-form .content-transc {
+    justify-content: center;
+    height: 150px;
+  }
+}
+@media ((min-width: 480px) and (max-width: 719px) and (orientation: landscape)) {
+  .box-form .content-transc {
+    justify-content: center;
+    height: 150px;
+  }
+}
+@media ((min-width: 0) and (max-width: 479px) and (orientation: landscape)) {
+  .box-form .content-transc {
+    justify-content: center;
+    height: 150px;
+  }
+}
 .box-form .content-transc .content-label {
   display: flex;
   flex-direction: column;
   gap: 30px;
+}
+@media ((min-width: 960px) and (max-width: 1199px) and (orientation: landscape)) {
+  .box-form .content-transc .content-label {
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media ((min-width: 720px) and (max-width: 959px) and (orientation: landscape)) {
+  .box-form .content-transc .content-label {
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media ((min-width: 480px) and (max-width: 719px) and (orientation: landscape)) {
+  .box-form .content-transc .content-label {
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media ((min-width: 0) and (max-width: 479px) and (orientation: landscape)) {
+  .box-form .content-transc .content-label {
+    justify-content: center;
+    align-items: center;
+  }
 }
 .box-form .content-transc .content-label input {
   height: 50px;
@@ -821,15 +1063,46 @@ a:link, a:visited {
 }
 .box-form .content-expres {
   height: 50%;
-  width: 70%;
+  width: 85%;
   display: flex;
   flex-direction: row;
-  justify-content: start;
+  justify-content: center;
   align-items: flex-end;
   flex-wrap: wrap;
   column-gap: 100px;
-  row-gap: 10px;
+  row-gap: 5px;
   margin: auto;
+}
+@media ((min-width: 960px) and (max-width: 1199px) and (orientation: landscape)) {
+  .box-form .content-expres {
+    display: flex;
+    align-items: column;
+    margin-bottom: 30px;
+  }
+}
+@media ((min-width: 720px) and (max-width: 959px) and (orientation: landscape)) {
+  .box-form .content-expres {
+    display: flex;
+    align-items: column;
+    height: 300px;
+    margin-bottom: 30px;
+  }
+}
+@media ((min-width: 480px) and (max-width: 719px) and (orientation: landscape)) {
+  .box-form .content-expres {
+    display: flex;
+    align-items: column;
+    height: 300px;
+    margin-bottom: 30px;
+  }
+}
+@media ((min-width: 0) and (max-width: 479px) and (orientation: landscape)) {
+  .box-form .content-expres {
+    display: flex;
+    align-items: column;
+    height: 300px;
+    margin-bottom: 30px;
+  }
 }
 @media (orientation: portrait) {
   .box-form .content-expres {
@@ -885,7 +1158,7 @@ a:link, a:visited {
 }
 .box-form .content-expres .content-input span #ESpalavra, .box-form .content-expres .content-input span #PTpalavra {
   height: 50px;
-  width: 400px;
+  width: 380px;
   border-radius: 30px;
   border: none;
   padding-left: 15px;
@@ -900,7 +1173,6 @@ a:link, a:visited {
   }
 }
 .box-form .content-expres .content-area {
-  height: 80%;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -910,11 +1182,18 @@ a:link, a:visited {
     flex-direction: column !important;
   }
 }
+@media ((min-width: 960px) and (max-width: 1199px) and (orientation: landscape)) {
+  .box-form .content-expres .content-area {
+    width: 90%;
+    max-width: 90%;
+  }
+}
 .box-form .content-expres .content-area .content-semantic {
   height: 80%;
   width: 40%;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 10px;
 }
 @media (orientation: portrait) {
@@ -927,7 +1206,7 @@ a:link, a:visited {
 }
 .box-form .content-expres .content-area .content-semantic label {
   position: relative;
-  left: 20%;
+  left: -40%;
 }
 .box-form .content-expres .content-area .content-semantic input {
   height: 50px;
@@ -941,7 +1220,7 @@ a:link, a:visited {
 }
 @media (orientation: portrait) {
   .box-form .content-expres .content-area .content-semantic input {
-    width: 90% !important;
+    width: calc(100% - 40px) !important;
   }
 }
 .box-form .content-expres .content-area .content-semantic span {
@@ -967,9 +1246,9 @@ a:link, a:visited {
 }
 .box-form .content-expres .content-area .content-desc #desc {
   min-height: calc(80% - 40px);
-  min-width: calc(100% - 40px);
+  min-width: 380px;
   max-height: calc(80% - 40px);
-  max-width: calc(10% - 40px);
+  max-width: 380px;
   resize: none;
   padding: 20px;
   border: none;
@@ -980,7 +1259,7 @@ a:link, a:visited {
 
 .img-content {
   min-height: 90%;
-  width: 65%;
+  width: 80%;
   margin: auto;
   display: flex;
   flex-direction: row;
@@ -996,6 +1275,30 @@ a:link, a:visited {
     align-items: center;
     flex-wrap: nowrap;
     gap: 20px;
+  }
+}
+@media ((min-width: 960px) and (max-width: 1199px) and (orientation: landscape)) {
+  .img-content {
+    width: 100%;
+    margin-left: 50px;
+  }
+}
+@media ((min-width: 720px) and (max-width: 959px) and (orientation: landscape)) {
+  .img-content {
+    width: 100%;
+    margin-left: 50px;
+  }
+}
+@media ((min-width: 480px) and (max-width: 719px) and (orientation: landscape)) {
+  .img-content {
+    width: 100%;
+    margin-left: 50px;
+  }
+}
+@media ((min-width: 0) and (max-width: 479px) and (orientation: landscape)) {
+  .img-content {
+    width: 100%;
+    margin-left: 50px;
   }
 }
 .img-content .content-mais {
@@ -1024,6 +1327,30 @@ a:link, a:visited {
     margin-left: 15px;
   }
 }
+@media ((min-width: 960px) and (max-width: 1199px) and (orientation: landscape)) {
+  #label-ex {
+    top: 0;
+    margin-left: 42%;
+  }
+}
+@media ((min-width: 720px) and (max-width: 959px) and (orientation: landscape)) {
+  #label-ex {
+    top: 0;
+    margin-left: 42%;
+  }
+}
+@media ((min-width: 480px) and (max-width: 719px) and (orientation: landscape)) {
+  #label-ex {
+    top: 0;
+    margin-left: 42%;
+  }
+}
+@media ((min-width: 0) and (max-width: 479px) and (orientation: landscape)) {
+  #label-ex {
+    top: 0;
+    margin-left: 42%;
+  }
+}
 
 .label-errors {
   display: flex;
@@ -1045,6 +1372,18 @@ input[type=file] {
   width: 230px;
   background-image: url("../drawble/image.png");
   background-size: contain;
+}
+@media ((min-width: 480px) and (max-width: 719px) and (orientation: landscape)) {
+  .custom-input {
+    height: 180px;
+    width: 180px;
+  }
+}
+@media ((min-width: 0) and (max-width: 479px) and (orientation: landscape)) {
+  .custom-input {
+    height: 180px;
+    width: 180px;
+  }
 }
 .custom-input .preview:hover {
   box-shadow: 0px 0px 20px 0px rgba(255, 13, 13, 0.862745098);
@@ -1072,6 +1411,24 @@ input[type=file] {
     width: 100%;
   }
 }
+@media ((min-width: 720px) and (max-width: 959px) and (orientation: landscape)) {
+  .content-warning .box {
+    height: 100%;
+    width: 100%;
+  }
+}
+@media ((min-width: 480px) and (max-width: 719px) and (orientation: landscape)) {
+  .content-warning .box {
+    height: 100%;
+    width: 100%;
+  }
+}
+@media ((min-width: 0) and (max-width: 479px) and (orientation: landscape)) {
+  .content-warning .box {
+    height: 100%;
+    width: 100%;
+  }
+}
 .content-warning .box .logo-box {
   display: flex;
   justify-content: center;
@@ -1081,6 +1438,21 @@ input[type=file] {
   .content-warning .box .logo-box {
     margin-bottom: -30px;
     margin-top: 50px;
+  }
+}
+@media ((min-width: 720px) and (max-width: 959px) and (orientation: landscape)) {
+  .content-warning .box .logo-box {
+    display: none;
+  }
+}
+@media ((min-width: 480px) and (max-width: 719px) and (orientation: landscape)) {
+  .content-warning .box .logo-box {
+    display: none;
+  }
+}
+@media ((min-width: 0) and (max-width: 479px) and (orientation: landscape)) {
+  .content-warning .box .logo-box {
+    display: none;
   }
 }
 .content-warning .box .logo-box .circle-logo {
@@ -1148,6 +1520,24 @@ input[type=file] {
   box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.6117647059);
 }
 @media (orientation: portrait) {
+  .busca-content .results-box {
+    width: 100vw;
+    min-width: 100vw;
+  }
+}
+@media ((min-width: 720px) and (max-width: 959px) and (orientation: landscape)) {
+  .busca-content .results-box {
+    width: 100vw;
+    min-width: 100vw;
+  }
+}
+@media ((min-width: 480px) and (max-width: 719px) and (orientation: landscape)) {
+  .busca-content .results-box {
+    width: 100vw;
+    min-width: 100vw;
+  }
+}
+@media ((min-width: 0) and (max-width: 479px) and (orientation: landscape)) {
   .busca-content .results-box {
     width: 100vw;
     min-width: 100vw;
@@ -1244,6 +1634,21 @@ input[type=file] {
   padding-bottom: 100px;
 }
 @media (orientation: portrait) {
+  .Home .contents {
+    width: 100vw;
+  }
+}
+@media ((min-width: 720px) and (max-width: 959px) and (orientation: landscape)) {
+  .Home .contents {
+    width: 100vw;
+  }
+}
+@media ((min-width: 480px) and (max-width: 719px) and (orientation: landscape)) {
+  .Home .contents {
+    width: 100vw;
+  }
+}
+@media ((min-width: 0) and (max-width: 479px) and (orientation: landscape)) {
   .Home .contents {
     width: 100vw;
   }
@@ -1453,6 +1858,21 @@ input[type=file] {
     width: 100vw;
   }
 }
+@media ((min-width: 720px) and (max-width: 959px) and (orientation: landscape)) {
+  .content-moder .search-box {
+    width: 100vw;
+  }
+}
+@media ((min-width: 480px) and (max-width: 719px) and (orientation: landscape)) {
+  .content-moder .search-box {
+    width: 100vw;
+  }
+}
+@media ((min-width: 0) and (max-width: 479px) and (orientation: landscape)) {
+  .content-moder .search-box {
+    width: 100vw;
+  }
+}
 
 .c-bt {
   position: fixed;
@@ -1508,6 +1928,7 @@ input[type=file] {
   width: 100vw;
   display: flex;
   flex-direction: column;
+  padding-bottom: 50px;
 }
 .content-update-itens .not-visible {
   width: 100px;
@@ -1536,6 +1957,21 @@ input[type=file] {
   display: flex;
   align-items: center;
   justify-content: space-around;
+}
+@media ((min-width: 720px) and (max-width: 959px) and (orientation: landscape)) {
+  .content-update-itens .options-update {
+    height: 80px;
+  }
+}
+@media ((min-width: 480px) and (max-width: 719px) and (orientation: landscape)) {
+  .content-update-itens .options-update {
+    height: 80px;
+  }
+}
+@media ((min-width: 0) and (max-width: 479px) and (orientation: landscape)) {
+  .content-update-itens .options-update {
+    height: 80px;
+  }
 }
 .content-update-itens .options-update .option {
   display: flex;
@@ -1578,6 +2014,27 @@ input[type=file] {
   margin-top: 3%;
   overflow: hidden;
 }
+@media ((min-width: 720px) and (max-width: 959px) and (orientation: landscape)) {
+  .box-form {
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+  }
+}
+@media ((min-width: 480px) and (max-width: 719px) and (orientation: landscape)) {
+  .box-form {
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+  }
+}
+@media ((min-width: 0) and (max-width: 479px) and (orientation: landscape)) {
+  .box-form {
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+  }
+}
 @media (orientation: portrait) {
   .box-form {
     overflow: auto;
@@ -1600,6 +2057,25 @@ input[type=file] {
   justify-content: space-around;
   height: 20%;
   margin: auto;
+  gap: 20px;
+}
+@media ((min-width: 720px) and (max-width: 959px) and (orientation: landscape)) {
+  .box-form .content-input {
+    width: 100%;
+    height: 150px;
+  }
+}
+@media ((min-width: 480px) and (max-width: 719px) and (orientation: landscape)) {
+  .box-form .content-input {
+    width: 100%;
+    height: 150px;
+  }
+}
+@media ((min-width: 0) and (max-width: 479px) and (orientation: landscape)) {
+  .box-form .content-input {
+    width: 100%;
+    height: 150px;
+  }
 }
 @media (orientation: portrait) {
   .box-form .content-input {
@@ -1611,7 +2087,13 @@ input[type=file] {
     gap: 30px;
   }
 }
-@media (orientation: landscape) {
+@media ((min-width: 960px) and (max-width: 1199px) and (orientation: landscape)) {
+  .box-form .content-input {
+    width: 73%;
+    max-width: 73%;
+  }
+}
+@media ((min-width: 1200px) and (orientation: landscape)) {
   .box-form .content-input {
     width: 73%;
     max-width: 73%;
@@ -1621,7 +2103,6 @@ input[type=file] {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  width: 100%;
 }
 .box-form .content-input #ESpalavra, .box-form .content-input #PTpalavra {
   height: 50px;
@@ -1639,8 +2120,25 @@ input[type=file] {
     margin-left: 15px;
   }
 }
+@media ((min-width: 720px) and (max-width: 959px) and (orientation: landscape)) {
+  .box-form .content-input #ESpalavra, .box-form .content-input #PTpalavra {
+    width: calc(100% - 20px) !important;
+    margin-left: 15px;
+  }
+}
+@media ((min-width: 480px) and (max-width: 719px) and (orientation: landscape)) {
+  .box-form .content-input #ESpalavra, .box-form .content-input #PTpalavra {
+    width: calc(100% - 50px) !important;
+    margin-left: 15px;
+  }
+}
+@media ((min-width: 0) and (max-width: 479px) and (orientation: landscape)) {
+  .box-form .content-input #ESpalavra, .box-form .content-input #PTpalavra {
+    width: calc(100% - 50px) !important;
+    margin-left: 15px;
+  }
+}
 .box-form .content-area {
-  height: 80%;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -1651,11 +2149,43 @@ input[type=file] {
     flex-direction: column !important;
   }
 }
+@media ((min-width: 1200px) and (orientation: landscape)) {
+  .box-form .content-area {
+    height: 80%;
+    width: 73%;
+    max-width: 73%;
+    margin: auto;
+  }
+}
+@media ((min-width: 960px) and (max-width: 1199px) and (orientation: landscape)) {
+  .box-form .content-area {
+    height: 80%;
+    width: 90%;
+    max-width: 90%;
+    margin: auto;
+  }
+}
+@media ((min-width: 720px) and (max-width: 959px) and (orientation: landscape)) {
+  .box-form .content-area {
+    height: 300px;
+  }
+}
+@media ((min-width: 480px) and (max-width: 719px) and (orientation: landscape)) {
+  .box-form .content-area {
+    height: 300px;
+  }
+}
+@media ((min-width: 0) and (max-width: 479px) and (orientation: landscape)) {
+  .box-form .content-area {
+    height: 300px;
+  }
+}
 .box-form .content-area .content-semantic {
   height: 80%;
   width: 40%;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 10px;
 }
 @media (orientation: portrait) {
@@ -1668,11 +2198,26 @@ input[type=file] {
 }
 .box-form .content-area .content-semantic label {
   position: relative;
-  left: 20%;
+  left: -40%;
 }
 @media (orientation: portrait) {
   .box-form .content-area .content-semantic label {
     left: -5px;
+  }
+}
+@media ((min-width: 720px) and (max-width: 959px) and (orientation: landscape)) {
+  .box-form .content-area .content-semantic label {
+    left: -80px;
+  }
+}
+@media ((min-width: 480px) and (max-width: 719px) and (orientation: landscape)) {
+  .box-form .content-area .content-semantic label {
+    left: -40px;
+  }
+}
+@media ((min-width: 0) and (max-width: 479px) and (orientation: landscape)) {
+  .box-form .content-area .content-semantic label {
+    left: -40px;
   }
 }
 .box-form .content-area .content-semantic input {
@@ -1688,6 +2233,24 @@ input[type=file] {
 @media (orientation: portrait) {
   .box-form .content-area .content-semantic input {
     width: calc(100% - 40px) !important;
+  }
+}
+@media ((min-width: 720px) and (max-width: 959px) and (orientation: landscape)) {
+  .box-form .content-area .content-semantic input {
+    width: calc(100% - 20px) !important;
+    margin-left: 15px;
+  }
+}
+@media ((min-width: 480px) and (max-width: 719px) and (orientation: landscape)) {
+  .box-form .content-area .content-semantic input {
+    width: calc(100% - 20px) !important;
+    margin-left: 15px;
+  }
+}
+@media ((min-width: 0) and (max-width: 479px) and (orientation: landscape)) {
+  .box-form .content-area .content-semantic input {
+    width: calc(100% - 20px) !important;
+    margin-left: 15px;
   }
 }
 .box-form .content-area .content-semantic span {
@@ -1715,9 +2278,9 @@ input[type=file] {
 }
 .box-form .content-desc #desc {
   min-height: calc(80% - 40px);
-  min-width: calc(100% - 150px);
+  min-width: 380px;
   max-height: calc(80% - 40px);
-  max-width: calc(100% - 150px);
+  max-width: 380px;
   resize: none;
   padding: 20px;
   border: none;
@@ -1729,6 +2292,33 @@ input[type=file] {
   .box-form .content-desc #desc {
     min-width: calc(100% - 75px);
     max-width: calc(100% - 75px);
+    margin-left: 15px;
+  }
+}
+@media ((min-width: 960px) and (max-width: 1199px) and (orientation: landscape)) {
+  .box-form .content-desc #desc {
+    min-width: 340px;
+    max-width: 340px;
+  }
+}
+@media ((min-width: 720px) and (max-width: 959px) and (orientation: landscape)) {
+  .box-form .content-desc #desc {
+    min-width: calc(100% - 20px) !important;
+    max-width: calc(100% - 20px) !important;
+    margin-left: 15px;
+  }
+}
+@media ((min-width: 480px) and (max-width: 719px) and (orientation: landscape)) {
+  .box-form .content-desc #desc {
+    min-width: calc(100% - 35px) !important;
+    max-width: calc(100% - 35px) !important;
+    margin-left: 15px;
+  }
+}
+@media ((min-width: 0) and (max-width: 479px) and (orientation: landscape)) {
+  .box-form .content-desc #desc {
+    min-width: calc(100% - 50px) !important;
+    max-width: calc(100% - 50px) !important;
     margin-left: 15px;
   }
 }
@@ -1750,6 +2340,30 @@ input[type=file] {
     right: calc(-50% + 30px);
     bottom: 10px;
     margin-top: 30px;
+  }
+}
+@media ((min-width: 720px) and (max-width: 959px) and (orientation: landscape)) {
+  .button-save {
+    position: relative;
+    bottom: 10px;
+    margin-top: 30px;
+    right: calc(-50% + 30px);
+  }
+}
+@media ((min-width: 480px) and (max-width: 719px) and (orientation: landscape)) {
+  .button-save {
+    position: relative;
+    bottom: 10px;
+    margin-top: 30px;
+    right: calc(-50% + 30px);
+  }
+}
+@media ((min-width: 0) and (max-width: 479px) and (orientation: landscape)) {
+  .button-save {
+    position: relative;
+    bottom: 10px;
+    margin-top: 30px;
+    right: calc(-50% + 30px);
   }
 }
 

@@ -18,6 +18,18 @@
             height: 100%
             width: 100%
 
+        @include md(landscape)
+            height: 100%
+            width: 100%
+
+        @include sm(landscape)
+            height: 100%
+            width: 100%
+
+        @include xs(landscape)
+            height: 100%
+            width: 100%
+
         .logo-box
             display: flex
             justify-content: center
@@ -26,6 +38,16 @@
             @include por
                 margin-bottom: -30px
                 margin-top: 50px
+
+            @include md(landscape)
+                display: none
+
+            @include sm(landscape)
+                display: none
+
+            @include xs(landscape)
+                display: none
+
 
             .circle-logo
                 border-radius: 50%

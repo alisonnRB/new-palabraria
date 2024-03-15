@@ -1,12 +1,11 @@
 @import './_breakPoints.sass'
-    
+
 .content-login
     height: 100vh
     width: 100vw
     display: flex
     align-items: center
     justify-content: center
-
 
     .card-login
         height: 80vh
@@ -19,6 +18,24 @@
             height: 100vh
             border-radius: 0
 
+        @include md(landscape)
+            width: 100vw
+            height: 100vh
+            border-radius: 0
+            box-shadow: none
+        
+        @include sm(landscape)
+            width: 100vw
+            height: 100vh
+            border-radius: 0
+            box-shadow: none
+
+        @include xs(landscape)
+            width: 100vw
+            height: 100vh
+            border-radius: 0
+            box-shadow: none
+
         .logo
             height: 15%
             display: flex
@@ -26,6 +43,15 @@
             align-items: flex-end
             position: relative
             top: 30px
+
+            @include md(landscape)
+                display: none
+
+            @include sm(landscape)
+                display: none
+
+            @include xs(landscape)
+                display: none
 
             img
                 height: 100%
@@ -37,6 +63,15 @@
             align-items: center
             justify-content: center
             gap: 8%
+
+            @include md(landscape)
+                height: 100%
+            
+            @include sm(landscape)
+                height: 100%
+
+            @include xs(landscape)
+                height: 100%
 
             .input-box
                 display: flex
@@ -61,7 +96,6 @@
                 height: 1em
                 margin-bottom: -3em
 
-            
             .bt
                 height: 40px
                 width: 150px

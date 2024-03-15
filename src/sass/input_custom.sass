@@ -1,3 +1,5 @@
+@import './_breakPoints.sass'
+
 input[type='file']
     display: none
 
@@ -7,6 +9,16 @@ input[type='file']
     width: 230px
     background-image: url('../drawble/image.png')
     background-size: contain
+
+
+    @include sm(landscape)
+        height: 180px
+        width: 180px
+
+    @include xs(landscape)
+        height: 180px
+        width: 180px
+
 
     .preview:hover
         box-shadow: 0px 0px 20px 0px #ff0d0ddc

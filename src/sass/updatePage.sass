@@ -5,6 +5,7 @@
     width: 100vw
     display: flex
     flex-direction: column
+    padding-bottom: 50px
 
     .not-visible
         width: 100px
@@ -29,6 +30,15 @@
         display: flex
         align-items: center
         justify-content: space-around
+
+        @include md(landscape)
+            height: 80px
+
+        @include sm(landscape)
+            height: 80px
+
+        @include xs(landscape)
+            height: 80px
 
         .option
             display: flex
@@ -66,6 +76,21 @@
     margin-top: 3%
     overflow: hidden
 
+    @include md(landscape)
+        height: 100%
+        width: 100%
+        overflow: auto
+
+    @include sm(landscape)
+        height: 100%
+        width: 100%
+        overflow: auto
+
+    @include xs(landscape)
+        height: 100%
+        width: 100%
+        overflow: auto
+
     @include por
         overflow: auto
 
@@ -86,6 +111,19 @@
         justify-content: space-around
         height: 20%
         margin: auto
+        gap: 20px
+
+        @include md(landscape)
+            width: 100%
+            height: 150px
+
+        @include sm(landscape)
+            width: 100%
+            height: 150px
+
+        @include xs(landscape)
+            width: 100%
+            height: 150px
 
         @include por
             height: 200px
@@ -95,16 +133,18 @@
             margin-bottom: 20px
             gap: 30px
 
-        @include land
+        @include lg(landscape)
             width: 73%
             max-width: 73%
 
+        @include xl(landscape)
+            width: 73%
+            max-width: 73%
 
         span
             display: flex
             flex-direction: column
             gap: 10px
-            width: 100%
 
         #ESpalavra, #PTpalavra
             height: 50px
@@ -120,8 +160,19 @@
                 width: calc( 100% - 65px ) !important
                 margin-left: 15px
 
+            @include md(landscape)
+                width: calc( 100% - 20px ) !important
+                margin-left: 15px
+
+            @include sm(landscape)
+                width: calc( 100% - 50px ) !important
+                margin-left: 15px
+
+            @include xs(landscape)
+                width: calc( 100% - 50px ) !important
+                margin-left: 15px
+
     .content-area
-        height: 80%
         display: flex
         align-items: center
         justify-content: space-around
@@ -130,11 +181,33 @@
             height: 500px
             flex-direction: column !important
 
+        @include xl(landscape)
+            height: 80%
+            width: 73%
+            max-width: 73%
+            margin: auto
+
+        @include lg(landscape)
+            height: 80%
+            width: 90%
+            max-width: 90%
+            margin: auto
+
+        @include md(landscape)
+            height: 300px
+
+        @include sm(landscape)
+            height: 300px
+
+        @include xs(landscape)
+            height: 300px
+
         .content-semantic
             height: 80%
             width: 40%
             display: flex
             flex-direction: column
+            align-items: center
             gap: 10px
 
             @include por
@@ -145,10 +218,19 @@
 
             label
                 position: relative
-                left: 20%
+                left: -40%
 
                 @include por
                     left: -5px
+
+                @include md(landscape)
+                    left: -80px
+
+                @include sm(landscape)
+                    left: -40px
+
+                @include xs(landscape)
+                    left: -40px
 
             input
                 height: 50px
@@ -162,6 +244,18 @@
 
                 @include por
                     width: calc( 100% - 40px ) !important
+
+                @include md(landscape)
+                    width: calc( 100% - 20px ) !important
+                    margin-left: 15px
+
+                @include sm(landscape)
+                    width: calc( 100% - 20px ) !important
+                    margin-left: 15px
+
+                @include xs(landscape)
+                    width: calc( 100% - 20px ) !important
+                    margin-left: 15px
 
             span
                 display: flex
@@ -186,9 +280,9 @@
 
         #desc
             min-height: calc( 80% - 40px )
-            min-width: calc( 100% - 150px )
+            min-width: 380px
             max-height: calc( 80% - 40px )
-            max-width: calc( 100% - 150px )
+            max-width: 380px
             resize: none
             padding: 20px
             border: none
@@ -199,6 +293,25 @@
             @include por
                 min-width: calc( 100% - 75px )
                 max-width: calc( 100% - 75px )
+                margin-left: 15px
+
+            @include lg(landscape)
+                min-width: 340px
+                max-width: 340px
+
+            @include md(landscape)
+                min-width: calc( 100% - 20px ) !important
+                max-width: calc( 100% - 20px ) !important
+                margin-left: 15px
+
+            @include sm(landscape)
+                min-width: calc( 100% - 35px ) !important
+                max-width: calc( 100% - 35px ) !important
+                margin-left: 15px
+
+            @include xs(landscape)
+                min-width: calc( 100% - 50px ) !important
+                max-width: calc( 100% - 50px ) !important
                 margin-left: 15px
 
 .button-save
@@ -217,6 +330,24 @@
         right: calc( -50% + 30px )
         bottom: 10px
         margin-top: 30px
+
+    @include md(landscape)
+        position: relative
+        bottom: 10px
+        margin-top: 30px
+        right: calc( -50% + 30px )
+
+    @include sm(landscape)
+        position: relative
+        bottom: 10px
+        margin-top: 30px
+        right: calc( -50% + 30px )
+
+    @include xs(landscape)
+        position: relative
+        bottom: 10px
+        margin-top: 30px
+        right: calc( -50% + 30px )
 
 .content-rigth
     height: 100vh
