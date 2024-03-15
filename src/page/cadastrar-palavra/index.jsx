@@ -137,14 +137,6 @@ export default function CadastrarPalavra(props) {
                 {etapa == 3 ? <Form3 setEtapa={setEtapa} Create={Create} form3={form3} Save={Save} /> : null}
             </form>
 
-            <p
-                className="prox-bt"
-                style={{ color: 'black' }}
-                onClick={() => { props.setEtapa(prevState => prevState + 1) }}
-            >
-                CONTINUAR
-            </p>
-
             {warningOpen ? <Warning /> : null}
 
         </div>

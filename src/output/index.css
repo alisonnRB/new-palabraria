@@ -73,15 +73,32 @@ a:link, a:visited {
   margin-left: 0;
   transition: all 0.5s linear;
 }
+@media (orientation: portrait) {
+  .Home .header .content-search {
+    transition: none;
+  }
+}
 .Home .header .content-search.open {
   animation: search-open 0.5s linear;
   left: calc(-50vw + 350px);
   margin-left: -520px;
 }
+@media (orientation: portrait) {
+  .Home .header .content-search.open {
+    left: calc(-50vw + 185px);
+    margin-left: -200px;
+    animation: none;
+  }
+}
 .Home .header .content-search.close {
   animation: search-open 0.5s linear reverse;
   left: 0;
   margin-left: 0;
+}
+@media (orientation: portrait) {
+  .Home .header .content-search.close {
+    animation: none;
+  }
 }
 .Home .header .content-search .lupa, .Home .header .content-search .search {
   height: 20px;
@@ -106,8 +123,20 @@ a:link, a:visited {
   width: 500px;
   border-radius: 30px;
 }
+@media (orientation: portrait) {
+  .Home .header .content-search .search.open {
+    width: 200px;
+    animation: none;
+  }
+}
 .Home .header .content-search .search.close {
   animation: input-box-close 0.5s linear;
+}
+@media (orientation: portrait) {
+  .Home .header .content-search .search.close {
+    animation: none;
+    width: 0px;
+  }
 }
 .Home .header .config {
   height: 40px;
@@ -138,7 +167,13 @@ a:link, a:visited {
   justify-content: center;
   gap: 70px;
   overflow: hidden;
+  transform-origin: left;
   animation: aba 0.3s linear;
+}
+@media (orientation: portrait) {
+  .Home .content-aba-config .aba-config {
+    width: 70%;
+  }
 }
 .Home .content-aba-config .aba-config.open {
   animation: fecha-aba 0.3s linear;
@@ -184,18 +219,18 @@ a:link, a:visited {
 
 @keyframes aba {
   0% {
-    width: 0;
+    transform: scale(0, 1);
   }
   100% {
-    width: 350px;
+    transform: scale(1, 1);
   }
 }
 @keyframes fecha-aba {
   0% {
-    width: 350px;
+    transform: scale(1, 1);
   }
   100% {
-    width: 0;
+    transform: scale(0, 1);
   }
 }
 @keyframes search-open {
@@ -323,6 +358,11 @@ a:link, a:visited {
   justify-content: center;
   cursor: pointer;
 }
+@media (orientation: portrait) {
+  .box-home .arrows {
+    display: none;
+  }
+}
 .box-home .arrows:hover {
   background: rgba(255, 255, 255, 0.5764705882);
 }
@@ -349,6 +389,12 @@ a:link, a:visited {
   width: 40vw;
   border-radius: 30px;
   box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.3411764706);
+}
+@media (orientation: portrait) {
+  .content-login .card-login {
+    width: 100vw;
+    height: 100vh;
+  }
 }
 .content-login .card-login .logo {
   height: 15%;
@@ -657,6 +703,11 @@ a:link, a:visited {
   width: 250px;
   background: grey;
 }
+@media (orientation: portrait) {
+  .content-forms .barra .box .etapa-box {
+    width: 110px;
+  }
+}
 .content-forms .barra .box .etapa-box.um {
   border-radius: 30px 0 0 30px;
 }
@@ -665,6 +716,7 @@ a:link, a:visited {
 }
 .content-forms .forms {
   height: 85%;
+  width: 100vw;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -693,6 +745,13 @@ a:link, a:visited {
 .box-form {
   height: 95%;
   width: 90%;
+}
+@media (orientation: portrait) {
+  .box-form {
+    width: 100% !important;
+    min-height: 100%;
+    height: 100%;
+  }
 }
 .box-form .content-transc {
   height: 25%;
@@ -745,10 +804,21 @@ a:link, a:visited {
   justify-content: space-evenly;
   height: 20%;
 }
+@media (orientation: portrait) {
+  .box-form .content-expres .content-input {
+    height: 0 !important;
+    min-height: 20% !important;
+    flex-direction: column !important;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    gap: 30px;
+  }
+}
 .box-form .content-expres .content-input span {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  width: 100%;
 }
 .box-form .content-expres .content-input span #ESpalavra, .box-form .content-expres .content-input span #PTpalavra {
   height: 50px;
@@ -760,11 +830,22 @@ a:link, a:visited {
   font-size: 1.2em;
   box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.3411764706);
 }
+@media (orientation: portrait) {
+  .box-form .content-expres .content-input span {
+    width: calc(100% - 65px) !important;
+    margin-left: 15px;
+  }
+}
 .box-form .content-expres .content-area {
   height: 80%;
   display: flex;
   align-items: center;
   justify-content: space-around;
+}
+@media (orientation: portrait) {
+  .box-form .content-expres .content-area {
+    flex-direction: column !important;
+  }
 }
 .box-form .content-expres .content-area .content-semantic {
   height: 80%;
@@ -772,6 +853,11 @@ a:link, a:visited {
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+@media (orientation: portrait) {
+  .box-form .content-expres .content-area .content-semantic {
+    width: 100% !important;
+  }
 }
 .box-form .content-expres .content-area .content-semantic label {
   position: relative;
@@ -786,6 +872,11 @@ a:link, a:visited {
   padding-right: 15px;
   font-size: 1.2em;
   box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.3411764706);
+}
+@media (orientation: portrait) {
+  .box-form .content-expres .content-area .content-semantic input {
+    width: 90% !important;
+  }
 }
 .box-form .content-expres .content-area .content-semantic span {
   display: flex;
@@ -955,6 +1046,12 @@ input[type=file] {
   padding-top: 60px;
   box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.6117647059);
 }
+@media (orientation: portrait) {
+  .busca-content .results-box {
+    width: 100vw;
+    min-width: 100vw;
+  }
+}
 .busca-content .results-box .view {
   height: 100px;
   width: 100px;
@@ -987,6 +1084,11 @@ input[type=file] {
   width: 25%;
   border-radius: 30px;
   object-fit: fill;
+}
+@media (orientation: portrait) {
+  .card-content-word img {
+    width: 50%;
+  }
 }
 .card-content-word .card-text {
   height: 100%;
@@ -1309,10 +1411,21 @@ input[type=file] {
   justify-content: space-evenly;
   height: 20%;
 }
+@media (orientation: portrait) {
+  .box-form .content-input {
+    height: 0 !important;
+    min-height: 20% !important;
+    flex-direction: column !important;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    gap: 30px;
+  }
+}
 .box-form .content-input span {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  width: 100%;
 }
 .box-form .content-input #ESpalavra, .box-form .content-input #PTpalavra {
   height: 50px;
@@ -1324,11 +1437,22 @@ input[type=file] {
   font-size: 1.2em;
   box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.3411764706);
 }
+@media (orientation: portrait) {
+  .box-form .content-input #ESpalavra, .box-form .content-input #PTpalavra {
+    width: calc(100% - 65px) !important;
+    margin-left: 15px;
+  }
+}
 .box-form .content-area {
   height: 80%;
   display: flex;
   align-items: center;
   justify-content: space-around;
+}
+@media (orientation: portrait) {
+  .box-form .content-area {
+    flex-direction: column !important;
+  }
 }
 .box-form .content-area .content-semantic {
   height: 80%;
@@ -1337,9 +1461,21 @@ input[type=file] {
   flex-direction: column;
   gap: 10px;
 }
+@media (orientation: portrait) {
+  .box-form .content-area .content-semantic {
+    width: 100% !important;
+  }
+}
 .box-form .content-area .content-semantic label {
   position: relative;
   left: 20%;
+}
+@media (orientation: portrait) {
+  .box-form .content-area .content-semantic label {
+    left: 0;
+    margin-bottom: -20px;
+    margin-top: 40px;
+  }
 }
 .box-form .content-area .content-semantic input {
   height: 50px;
@@ -1350,6 +1486,11 @@ input[type=file] {
   padding-right: 15px;
   font-size: 1.2em;
   box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.3411764706);
+}
+@media (orientation: portrait) {
+  .box-form .content-area .content-semantic input {
+    width: 90% !important;
+  }
 }
 .box-form .content-area .content-semantic span {
   display: flex;
@@ -1366,6 +1507,12 @@ input[type=file] {
   flex-direction: column;
   gap: 10px;
 }
+@media (orientation: portrait) {
+  .box-form .content-desc {
+    width: 100%;
+    margin-bottom: 100px;
+  }
+}
 .box-form .content-desc #desc {
   min-height: calc(80% - 40px);
   min-width: calc(100% - 150px);
@@ -1377,6 +1524,13 @@ input[type=file] {
   border-radius: 30px;
   box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.3411764706);
   font-size: 1.2em;
+}
+@media (orientation: portrait) {
+  .box-form .content-desc #desc {
+    min-width: calc(100% - 75px);
+    max-width: calc(100% - 75px);
+    margin-left: 15px;
+  }
 }
 
 .button-save {

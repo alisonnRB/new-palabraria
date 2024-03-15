@@ -1,3 +1,6 @@
+@import './_breakPoints.sass'
+    
+    
 .box-home
     height: 100%
     width: 100vw
@@ -52,6 +55,9 @@
         align-items: center
         justify-content: center
         cursor: pointer
+
+        @include por
+            display: none
 
         &:hover
             background: #ffffff93

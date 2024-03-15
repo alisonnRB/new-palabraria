@@ -1,3 +1,5 @@
+@import './_breakPoints.sass'
+
 .busca-content
     min-height: 100%
     width: 100vw
@@ -15,6 +17,10 @@
         gap: 40px
         padding-top: 60px
         box-shadow: 0px 0px 20px 0px #0000009c
+
+        @include por
+            width: 100vw
+            min-width: 100vw
 
         .view
             height: 100px
@@ -47,6 +53,9 @@
         width: 25%
         border-radius: 30px
         object-fit: fill
+
+        @include por
+            width: 50%
 
     .card-text
         height: 100%

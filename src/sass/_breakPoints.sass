@@ -1,0 +1,29 @@
+$breakpoints: ("xs" : 0, "sm" : 480px, "md" : 720px, "lg" : 960px, "xl" : 1200px)
+
+@mixin xs($orientation : portrait)
+    @media ((min-width: map-get($breakpoints, "xs")) and (max-width: map-get($breakpoints, "sm") - 1) and (orientation: $orientation))
+        @content
+
+@mixin sm($orientation : portrait)
+    @media ( (min-width: map-get($breakpoints, "sm")) and (max-width: map-get($breakpoints, "md") - 1) and (orientation: $orientation))
+        @content
+
+@mixin md($orientation : portrait)
+    @media ( (min-width: map-get($breakpoints, "md")) and (max-width: map-get($breakpoints, "lg") - 1) and (orientation: $orientation))
+        @content
+
+@mixin lg($orientation : portrait)
+    @media ( (min-width: map-get($breakpoints, "lg")) and (max-width: map-get($breakpoints, "xl") - 1) and (orientation: $orientation))
+        @content
+
+@mixin xl($orientation : portrait)
+    @media ( (min-width: map-get($breakpoints, "xl")) and (orientation: $orientation))
+        @content
+
+@mixin por
+    @media (orientation: portrait)
+        @content
+
+@mixin land
+    @media (orientation: landscape)
+        @content

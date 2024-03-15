@@ -1,3 +1,5 @@
+@import './_breakPoints.sass'
+
 .Home
     height: 100vh
     width: 100vw
@@ -49,15 +51,26 @@
 
             transition: all .5s linear
 
+            @include por
+                transition: none
+
             &.open
                 animation: search-open .5s linear
                 left: calc( -50vw - -350px )
                 margin-left: -520px
 
+                @include por
+                    left: calc( -50vw - -185px ) 
+                    margin-left: -200px
+                    animation: none
+
             &.close
                 animation: search-open .5s linear reverse
                 left: 0
                 margin-left: 0
+
+                @include por
+                    animation: none
 
             .lupa
                 height: 20px
@@ -83,8 +96,16 @@
                     width: 500px
                     border-radius: 30px
 
+                    @include por
+                        width: 200px
+                        animation: none
+
                 &.close
                     animation: input-box-close .5s linear
+
+                    @include por
+                        animation: none
+                        width: 0px
 
         .config
             height: 40px
@@ -115,8 +136,12 @@
             justify-content: center
             gap: 70px
             overflow: hidden
+            transform-origin: left
 
             animation: aba .3s linear
+
+            @include por
+                width: 70%
 
             &.open
                 animation: fecha-aba .3s linear
@@ -163,17 +188,17 @@
 
 @keyframes aba
     0%
-        width: 0
+        transform: scale(0, 1)
 
     100%
-        width: 350px
+        transform: scale(1, 1)
 
 @keyframes fecha-aba
     0%
-        width: 350px
+        transform: scale(1, 1)
 
     100%
-        width: 0
+        transform: scale(0, 1)
 
 @keyframes search-open
     0%
