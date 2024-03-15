@@ -1371,6 +1371,12 @@ input[type=file] {
 }
 .content-update-itens .not-visible {
   width: 100px;
+  height: 10px;
+}
+@media (orientation: portrait) {
+  .content-update-itens .not-visible {
+    width: 30px;
+  }
 }
 .content-update-itens .comeback {
   height: 60px;
@@ -1378,6 +1384,12 @@ input[type=file] {
   position: relative;
   top: 20px;
   cursor: pointer;
+}
+@media (orientation: portrait) {
+  .content-update-itens .comeback {
+    height: 40px;
+    top: 10px;
+  }
 }
 .content-update-itens .options-update {
   height: 15%;
@@ -1394,12 +1406,23 @@ input[type=file] {
 .content-update-itens .options-update .option p {
   font-size: 1.4em;
 }
+@media (orientation: portrait) {
+  .content-update-itens .options-update .option p {
+    font-size: 1em;
+  }
+}
 .content-update-itens .options-update .option .bt-op {
   height: 50px;
   width: 50px;
   background: grey;
   cursor: pointer;
   border-radius: 20px;
+}
+@media (orientation: portrait) {
+  .content-update-itens .options-update .option .bt-op {
+    height: 30px;
+    width: 30px;
+  }
 }
 .content-update-itens .update-content {
   height: 85%;
@@ -1573,6 +1596,13 @@ input[type=file] {
   right: 30px;
   padding: 15px;
   cursor: pointer;
+}
+@media (orientation: portrait) {
+  .button-save {
+    position: relative;
+    right: calc(-50% + 30px);
+    bottom: 10px;
+  }
 }
 
 .content-rigth {
