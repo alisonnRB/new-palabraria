@@ -65,7 +65,7 @@ export default function FormulareDOIS(props) {
         if (props.type && props.type == "update" && props.search && props.search.current) {
             const name = props.search.current[props.num];
             if (name) {
-                const image = "http://localhost/src/drawble/palavras/" + name;
+                const image = "http://10.0.0.183/src/drawble/palavras/" + name;
                 setImagePreview(image);
             }
 

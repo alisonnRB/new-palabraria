@@ -15,7 +15,7 @@ export default function Login() {
         event.preventDefault();
 
         try {
-            const response = await axios.post('http://localhost/src/controls/login.php', {
+            const response = await axios.post('http://10.0.0.183/src/controls/login.php', {
                 user: user,
                 senha: senha,
             });

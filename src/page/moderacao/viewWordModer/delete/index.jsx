@@ -6,7 +6,7 @@ export default function Delete(props) {
     const navigate = useNavigate();
 
     const Dell = async () => {
-        const response = await axios.delete(`http://localhost/src/controls/update.php?type=${props.type}&id=${props.id}`,
+        const response = await axios.delete(`http://10.0.0.183/src/controls/update.php?type=${props.type}&id=${props.id}`,
             {
                 headers: {
                     'Content-Type': 'application/json',

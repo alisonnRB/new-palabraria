@@ -14,7 +14,7 @@ export default function Word() {
     const search = async () => {
         try {
 
-            const response = await axios.get(`http://localhost/src/controls/search.php?tipo=unic&busca=&index=${wordId}`,
+            const response = await axios.get(`http://10.0.0.183/src/controls/search.php?tipo=unic&busca=&index=${wordId}`,
                 {
                     headers: {
                         'Content-Type': 'application/json',

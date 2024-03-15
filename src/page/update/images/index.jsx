@@ -39,7 +39,7 @@ export default function UpadteImage(props) {
         }
 
         try {
-            const response = await axios.post('http://localhost/src/controls/Update.php', form,
+            const response = await axios.post('http://10.0.0.183/src/controls/Update.php', form,
                 {
                     headers: {
                         // 'Authorization': `Bearer ${token}`,

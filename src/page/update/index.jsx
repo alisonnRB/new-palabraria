@@ -29,7 +29,7 @@ export default function Update() {
 
     const Verify_Auth = async (token) => {
         try {
-            const response = await axios.post('http://localhost/src/controls/login.php', {}, {
+            const response = await axios.post('http://10.0.0.183/src/controls/login.php', {}, {
                 headers: {
                     'Authorization': `Bearer ${token}`,
                     'Content-Type': 'application/json',
@@ -51,7 +51,7 @@ export default function Update() {
     const search = async () => {
         try {
 
-            const response = await axios.get(`http://localhost/src/controls/search.php?tipo=${type}&busca=&index=${wordId}`,
+            const response = await axios.get(`http://10.0.0.183/src/controls/search.php?tipo=${type}&busca=&index=${wordId}`,
                 {
                     headers: {
                         'Content-Type': 'application/json',

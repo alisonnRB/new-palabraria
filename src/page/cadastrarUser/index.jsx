@@ -16,7 +16,7 @@ export default function CadastrarUser() {
 
     const Verify_Auth = async (token) => {
         try {
-            const response = await axios.post('http://localhost/src/controls/login.php', {}, {
+            const response = await axios.post('http://10.0.0.183/src/controls/login.php', {}, {
                 headers: {
                     'Authorization': `Bearer ${token}`,
                     'Content-Type': 'application/json',
@@ -41,7 +41,7 @@ export default function CadastrarUser() {
         const token = sessionStorage.getItem('token');
 
         try {
-            const response = await axios.post('http://localhost/src/controls/user.php', {
+            const response = await axios.post('http://10.0.0.183/src/controls/user.php', {
                 user: user,
                 senha: senha,
                 permition: permissao

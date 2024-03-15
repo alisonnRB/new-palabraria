@@ -28,7 +28,7 @@ const Carousel = (props) => {
         for (let i = 1; i < 7; i++) {
             if (props.infos[`imagem${i}`]) {
                 let a = <div className='foto' key={i}>
-                    <img src={`http://localhost/src/drawble/palavras/${props.infos[`imagem${i}`]}`}/>
+                    <img src={`http://10.0.0.183/src/drawble/palavras/${props.infos[`imagem${i}`]}`}/>
                 </div>
                 list.push(a);
             }

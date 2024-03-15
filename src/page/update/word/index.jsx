@@ -40,7 +40,7 @@ export default function Word(props) {
             const formData = new FormData;
             formData.append("form", JSON.stringify(form))
 
-            const response = await axios.post(`http://localhost/src/controls/update.php`, formData,
+            const response = await axios.post(`http://10.0.0.183/src/controls/update.php`, formData,
                 {
                     headers: {
                         'Authorization': `Bearer ${token}`,

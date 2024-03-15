@@ -23,7 +23,7 @@ export default function Moder() {
 
     const Verify_Auth = async (token) => {
         try {
-            const response = await axios.post('http://localhost/src/controls/login.php', {}, {
+            const response = await axios.post('http://10.0.0.183/src/controls/login.php', {}, {
                 headers: {
                     'Authorization': `Bearer ${token}`,
                     'Content-Type': 'application/json',
@@ -45,7 +45,7 @@ export default function Moder() {
     const searchDebounced = async (type = false) => {
         try {
 
-            const response = await axios.get(`http://localhost/src/controls/search.php?tipo=moder&busca=${busca}&index=${index.current}&bd=${bd}`,
+            const response = await axios.get(`http://10.0.0.183/src/controls/search.php?tipo=moder&busca=${busca}&index=${index.current}&bd=${bd}`,
                 {
                     headers: {
                         'Content-Type': 'application/json',
