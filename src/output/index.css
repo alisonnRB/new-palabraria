@@ -394,6 +394,7 @@ a:link, a:visited {
   .content-login .card-login {
     width: 100vw;
     height: 100vh;
+    border-radius: 0;
   }
 }
 .content-login .card-login .logo {
@@ -509,6 +510,15 @@ a:link, a:visited {
   gap: 50px;
   padding-right: auto;
   padding-left: auto;
+}
+@media (orientation: portrait) {
+  .Usuarios .content .card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    margin-top: 30px;
+  }
 }
 
 .erro {
@@ -1192,9 +1202,17 @@ input[type=file] {
   padding-left: 20px;
   font-size: 2em;
 }
+@media (orientation: portrait) {
+  .card-content-word .card-text h6 {
+    font-size: 1.3em;
+  }
+}
 .card-content-word .card-text p {
   height: calc(70% - 20px);
+  max-width: calc(100% - 40px);
   padding: 20px;
+  word-break: break-all;
+  overflow: auto;
 }
 
 .c-loader {
@@ -1224,6 +1242,11 @@ input[type=file] {
   box-shadow: 0px 0px 25px 5px #000;
   font-family: "Open Sans";
   padding-bottom: 100px;
+}
+@media (orientation: portrait) {
+  .Home .contents {
+    width: 100vw;
+  }
 }
 .Home .contents .comport-carrossel {
   height: 500px;
@@ -1288,6 +1311,13 @@ input[type=file] {
 .Home .contents .content-desc .content-area-desc .area-desc p {
   font-weight: lighter;
   font-size: 2em;
+  word-break: break-all;
+}
+@media (orientation: portrait) {
+  .Home .contents .content-desc .content-area-desc .area-desc p {
+    max-height: 300px;
+    overflow: auto;
+  }
 }
 .Home .contents .frases {
   width: 100%;
@@ -1311,9 +1341,20 @@ input[type=file] {
 .Home .contents .frases.s {
   justify-content: flex-end;
 }
+@media (orientation: portrait) {
+  .Home .contents .frases.s {
+    justify-content: center;
+  }
+}
 .Home .contents .frases.s .balao {
   margin-left: 0;
   margin-right: 60px;
+}
+@media (orientation: portrait) {
+  .Home .contents .frases.s .balao {
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
 
 .view-header {
@@ -1351,15 +1392,23 @@ input[type=file] {
   position: relative;
   z-index: 100;
 }
+@media (orientation: portrait) {
+  .header-moder {
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+  }
+}
 .header-moder .bd-type {
   background: black;
   color: white;
   border: none;
   font-size: 1.3em;
   padding-right: 20px;
+  outline: none;
+  border-style: none;
 }
 .header-moder .search {
-  border: none;
   outline: none;
   font-family: "forum";
   font-size: 1.2em;
@@ -1369,8 +1418,18 @@ input[type=file] {
   width: 400px;
   border-radius: 30px;
 }
+@media (orientation: portrait) {
+  .header-moder .search {
+    width: 70vw;
+  }
+}
 .header-moder .not-box {
   width: 100px;
+}
+@media (orientation: portrait) {
+  .header-moder .not-box {
+    display: none;
+  }
 }
 
 .content-moder {
@@ -1389,6 +1448,11 @@ input[type=file] {
   padding-top: 60px;
   box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.6117647059);
 }
+@media (orientation: portrait) {
+  .content-moder .search-box {
+    width: 100vw;
+  }
+}
 
 .c-bt {
   position: fixed;
@@ -1403,6 +1467,11 @@ input[type=file] {
   align-items: center;
   justify-content: center;
   box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.6039215686);
+}
+@media (orientation: portrait) {
+  .c-bt {
+    right: 10px;
+  }
 }
 .c-bt p {
   color: white;
@@ -1420,6 +1489,7 @@ input[type=file] {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background: white;
 }
 .options-c p {
   width: 100%;
@@ -1833,6 +1903,11 @@ input[type=file] {
   align-items: center;
   gap: 50px;
   padding-bottom: 30px;
+}
+@media (orientation: portrait) {
+  .infos-user .content-cards {
+    width: 100vw;
+  }
 }
 .infos-user .content-cards p {
   width: 100%;

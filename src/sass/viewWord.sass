@@ -14,6 +14,9 @@
         font-family: 'Open Sans'
         padding-bottom: 100px
 
+        @include por
+            width: 100vw
+
         .comport-carrossel
             height: 500px
             width: 100%
@@ -78,6 +81,11 @@
                     p
                         font-weight: lighter
                         font-size: 2em
+                        word-break: break-all
+
+                        @include por
+                            max-height: 300px
+                            overflow: auto
 
         .frases
             width: 100%
@@ -101,9 +109,16 @@
             &.s
                 justify-content: flex-end
 
+                @include por
+                    justify-content: center
+
                 .balao
                     margin-left: 0
                     margin-right: 60px
+
+                    @include por
+                        margin-left: 0
+                        margin-right: 0
 
 .view-header
     width: 100vw
