@@ -9,7 +9,7 @@ export default function Warning(props) {
         const token = sessionStorage.getItem('token');
 
         try {
-            const resposta = await axios.delete(`http://10.0.0.183/src/controls/user.php?id=${props.id}`, {
+            const resposta = await axios.delete(`http://localhost/src/controls/user.php?id=${props.id}`, {
                 headers: {
                     'Authorization': `Bearer ${token}`,
                     'Content-Type': 'application/json',

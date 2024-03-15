@@ -15,7 +15,7 @@ export default function UserInfos() {
 
     const Search = async (token, id) => {
         try {
-            const response = await axios.get(`http://10.0.0.183/src/controls/user.php?id=${id}`, {
+            const response = await axios.get(`http://localhost/src/controls/user.php?id=${id}`, {
                 headers: {
                     'Authorization': `Bearer ${token}`,
                     'Content-Type': 'application/json',
@@ -45,7 +45,7 @@ export default function UserInfos() {
 
     useEffect(() => {
         if (user) {
-            setImage('http://10.0.0.183/src/drawble/user/user_' + user.tipo + '.jpeg');
+            setImage('http://localhost/src/drawble/user/user_' + user.tipo + '.jpeg');
         }
     }, [user])
 

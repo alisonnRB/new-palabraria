@@ -12,7 +12,7 @@ export default function Card(props) {
     useEffect(()=>{
         if(props && props.infos){
             setInfos(props.infos);
-            setImage('http://10.0.0.183/src/drawble/user/user_' + props.infos.tipo + '.jpeg');
+            setImage('http://localhost/src/drawble/user/user_' + props.infos.tipo + '.jpeg');
         }
     },[props]);
 

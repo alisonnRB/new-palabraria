@@ -17,7 +17,7 @@ export default function FormulareUM(props) {
         const searchDebounced = async () => {
             const token = sessionStorage.getItem('token');
             try {
-                const response = await axios.get(`http://10.0.0.183/src/controls/palavra-existe.php?palavra=${searchTerm}`,
+                const response = await axios.get(`http://localhost/src/controls/palavra-existe.php?palavra=${searchTerm}`,
                     {
                         headers: {
                             'Authorization': `Bearer ${token}`,

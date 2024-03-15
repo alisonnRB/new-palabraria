@@ -15,7 +15,7 @@ export default function Usuarios() {
 
     const Verify_Auth = async (token) => {
         try {
-            const response = await axios.post('http://10.0.0.183/src/controls/login.php', {}, {
+            const response = await axios.post('http://localhost/src/controls/login.php', {}, {
                 headers: {
                     'Authorization': `Bearer ${token}`,
                     'Content-Type': 'application/json',
@@ -36,7 +36,7 @@ export default function Usuarios() {
 
     const Search = async (token) => {
         try {
-            const response = await axios.get('http://10.0.0.183/src/controls/user.php?id=0', {
+            const response = await axios.get('http://localhost/src/controls/user.php?id=0', {
                 headers: {
                     'Authorization': `Bearer ${token}`,
                     'Content-Type': 'application/json',

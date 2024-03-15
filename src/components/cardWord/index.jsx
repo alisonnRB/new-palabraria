@@ -7,7 +7,7 @@ export default function CardWord(props) {
 
     useEffect(()=>{
         if(props.infos && props.infos.imagem1){
-            setImage('http://10.0.0.183/src/drawble/palavras/' + props.infos.imagem1);
+            setImage('http://localhost/src/drawble/palavras/' + props.infos.imagem1);
         }
     },[props.infos]);
 
