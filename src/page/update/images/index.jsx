@@ -22,6 +22,8 @@ export default function UpadteImage(props) {
     const Update = async () => {
         const form = new FormData;
 
+        const token = sessionStorage.getItem("token")
+
         const list = {
             "mode" : 2,
             "id" : props.infos.id,
@@ -42,7 +44,7 @@ export default function UpadteImage(props) {
             const response = await axios.post('http://10.0.0.183/src/controls/Update.php', form,
                 {
                     headers: {
-                        // 'Authorization': `Bearer ${token}`,
+                        'Authorization': `Bearer ${token}`,
                         'Content-Type': 'multipart/form-data',
                     }
                 });

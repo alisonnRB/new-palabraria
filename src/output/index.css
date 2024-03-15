@@ -972,6 +972,7 @@ a:link, a:visited {
 .box-form {
   height: 95%;
   width: 90%;
+  overflow-x: hidden;
 }
 @media (orientation: portrait) {
   .box-form {
@@ -2012,7 +2013,7 @@ input[type=file] {
   height: 90%;
   width: 90%;
   margin-top: 3%;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 @media ((min-width: 720px) and (max-width: 959px) and (orientation: landscape)) {
   .box-form {

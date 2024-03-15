@@ -103,7 +103,7 @@ export default function Header(props) {
                         {login ? <Link to='/Cadastro-palavra'><p className="rote">CADASTRAR PALAVRAS</p></Link> : null}
                         <Link ><p className="rote">REQUIRIR UM LOGIN</p></Link>
                         {tipo != 'instituicao' && login ? <Link to='/Moder'><p className="rote">MODERAÇÃO</p></Link> : null}
-                        {login ? <Link ><p className="rote" onClick={() => { sessionStorage.clear(); window.location.reload() }}>LOGOUT</p></Link> : null}
+                        {login ? <Link ><p className="rote" onClick={() => { sessionStorage.clear(); localStorage.clear(); window.location.reload() }}>LOGOUT</p></Link> : null}
                     </nav>
                 </div>
                 : null}

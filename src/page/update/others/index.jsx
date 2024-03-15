@@ -23,6 +23,9 @@ export default function Others(props) {
 
     const Update = async () => {
         try {
+
+            const token = sessionStorage.getItem('token');
+
             const form = {
                 "mode": 3,
                 "id": props.infos.id,
@@ -40,6 +43,7 @@ export default function Others(props) {
             const response = await axios.post(`http://10.0.0.183/src/controls/update.php`, formData,
                 {
                     headers: {
+                        'Authorization': `Bearer ${token}`,
                         'Content-Type': 'multipart/form-data',
                     }
                 });
@@ -52,7 +56,7 @@ export default function Others(props) {
                 props.setOpenMsg(true);
             }
         } catch (error) {
-            console.log("error")
+            console.log(error)
         }
 
 
