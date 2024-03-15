@@ -14,10 +14,18 @@
         width: 550px
         background: white
 
+        @include por
+            height: 100%
+            width: 100%
+
         .logo-box
             display: flex
             justify-content: center
             margin-bottom: -30px
+
+            @include por
+                margin-bottom: -30px
+                margin-top: 50px
 
             .circle-logo
                 border-radius: 50%
@@ -43,6 +51,7 @@
 
             .quest
                 font-size: 2em
+                text-align: center
 
         .button-box
             display: flex

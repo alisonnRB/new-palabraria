@@ -752,6 +752,17 @@ a:link, a:visited {
   font-size: 2em;
   cursor: pointer;
 }
+@media (orientation: portrait) {
+  .content-forms .forms .volt-bt {
+    position: relative;
+    height: 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 0;
+  }
+}
 
 .box-form {
   height: 95%;
@@ -772,6 +783,11 @@ a:link, a:visited {
   display: flex;
   align-items: center;
 }
+@media (orientation: portrait) {
+  .box-form .content-transc {
+    width: 100% !important;
+  }
+}
 .box-form .content-transc .content-label {
   display: flex;
   flex-direction: column;
@@ -787,6 +803,12 @@ a:link, a:visited {
   font-size: 1.2em;
   box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.3411764706);
 }
+@media (orientation: portrait) {
+  .box-form .content-transc .content-label input {
+    width: calc(100vw - 65px);
+    margin-left: 15px;
+  }
+}
 .box-form .content-expres {
   height: 50%;
   width: 70%;
@@ -799,6 +821,12 @@ a:link, a:visited {
   row-gap: 10px;
   margin: auto;
 }
+@media (orientation: portrait) {
+  .box-form .content-expres {
+    width: 100%;
+    margin-bottom: 50px;
+  }
+}
 .box-form .content-expres input {
   height: 50px;
   width: 400px;
@@ -809,12 +837,19 @@ a:link, a:visited {
   font-size: 1.2em;
   box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.3411764706);
 }
+@media (orientation: portrait) {
+  .box-form .content-expres input {
+    width: calc(100vw - 65px);
+    margin-left: 15px;
+  }
+}
 .box-form .content-expres .content-input {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-around;
   height: 20%;
+  margin: auto;
 }
 @media (orientation: portrait) {
   .box-form .content-expres .content-input {
@@ -824,6 +859,12 @@ a:link, a:visited {
     margin-top: 20px;
     margin-bottom: 20px;
     gap: 30px;
+  }
+}
+@media (orientation: landscape) {
+  .box-form .content-expres .content-input {
+    width: 73%;
+    max-width: 73%;
   }
 }
 .box-form .content-expres .content-input span {
@@ -928,7 +969,7 @@ a:link, a:visited {
 }
 
 .img-content {
-  height: 90%;
+  min-height: 90%;
   width: 65%;
   margin: auto;
   display: flex;
@@ -936,6 +977,16 @@ a:link, a:visited {
   align-items: start;
   flex-wrap: wrap;
   column-gap: 100px;
+}
+@media (orientation: portrait) {
+  .img-content {
+    width: 95%;
+    min-height: 100%;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 20px;
+  }
 }
 .img-content .content-mais {
   height: 230px;
@@ -956,6 +1007,12 @@ a:link, a:visited {
   margin-left: 16.3%;
   position: relative;
   top: 45px;
+}
+@media (orientation: portrait) {
+  #label-ex {
+    top: 0;
+    margin-left: 15px;
+  }
 }
 
 .label-errors {
@@ -999,10 +1056,22 @@ input[type=file] {
   width: 550px;
   background: white;
 }
+@media (orientation: portrait) {
+  .content-warning .box {
+    height: 100%;
+    width: 100%;
+  }
+}
 .content-warning .box .logo-box {
   display: flex;
   justify-content: center;
   margin-bottom: -30px;
+}
+@media (orientation: portrait) {
+  .content-warning .box .logo-box {
+    margin-bottom: -30px;
+    margin-top: 50px;
+  }
 }
 .content-warning .box .logo-box .circle-logo {
   border-radius: 50%;
@@ -1028,6 +1097,7 @@ input[type=file] {
 }
 .content-warning .box .text-box .quest {
   font-size: 2em;
+  text-align: center;
 }
 .content-warning .box .button-box {
   display: flex;
@@ -1457,8 +1527,9 @@ input[type=file] {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-around;
   height: 20%;
+  margin: auto;
 }
 @media (orientation: portrait) {
   .box-form .content-input {
@@ -1468,6 +1539,12 @@ input[type=file] {
     margin-top: 20px;
     margin-bottom: 20px;
     gap: 30px;
+  }
+}
+@media (orientation: landscape) {
+  .box-form .content-input {
+    width: 73%;
+    max-width: 73%;
   }
 }
 .box-form .content-input span {
@@ -1602,6 +1679,7 @@ input[type=file] {
     position: relative;
     right: calc(-50% + 30px);
     bottom: 10px;
+    margin-top: 30px;
   }
 }
 

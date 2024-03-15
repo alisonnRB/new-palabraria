@@ -83,8 +83,9 @@
         display: flex
         flex-direction: row
         align-items: center
-        justify-content: space-evenly
+        justify-content: space-around
         height: 20%
+        margin: auto
 
         @include por
             height: 200px
@@ -93,6 +94,11 @@
             margin-top: 20px
             margin-bottom: 20px
             gap: 30px
+
+        @include land
+            width: 73%
+            max-width: 73%
+
 
         span
             display: flex
@@ -208,8 +214,9 @@
 
     @include por
         position: relative
-        right: calc( -50% + 30px  )
+        right: calc( -50% + 30px )
         bottom: 10px
+        margin-top: 30px
 
 .content-rigth
     height: 100vh

@@ -69,6 +69,14 @@
             font-size: 2em
             cursor: pointer
 
+            @include por
+                position: relative
+                height: 100px
+                width: 100%
+                display: flex
+                align-items: center
+                justify-content: center
+                left: 0
 .box-form
     height: 95%
     width: 90%
@@ -86,6 +94,9 @@
         display: flex
         align-items: center
 
+        @include por
+            width: 100% !important
+
         .content-label
             display: flex
             flex-direction: column
@@ -101,6 +112,10 @@
                 font-size: 1.2em
                 box-shadow: 0px 0px 20px 0px #00000057
 
+                @include por
+                    width: calc( 100vw - 65px )
+                    margin-left: 15px
+
     .content-expres
         height: 50%
         width: 70%
@@ -113,6 +128,10 @@
         row-gap: 10px
         margin: auto
 
+        @include por
+            width: 100%
+            margin-bottom: 50px
+
         input
             height: 50px
             width: 400px
@@ -123,12 +142,17 @@
             font-size: 1.2em
             box-shadow: 0px 0px 20px 0px #00000057
 
+            @include por
+                width: calc( 100vw - 65px )
+                margin-left: 15px
+
         .content-input
             display: flex
             flex-direction: row
             align-items: center
-            justify-content: space-evenly
+            justify-content: space-around
             height: 20%
+            margin: auto
 
             @include por
                 min-height: 200px
@@ -137,6 +161,10 @@
                 margin-top: 20px
                 margin-bottom: 20px
                 gap: 30px
+
+            @include land
+                width: 73%
+                max-width: 73%
 
             span
                 display: flex
@@ -229,7 +257,7 @@
                     font-size: 1.2em
 
 .img-content
-    height: 90%
+    min-height: 90%
     width: 65%
     margin: auto
     display: flex
@@ -237,6 +265,14 @@
     align-items: start
     flex-wrap: wrap
     column-gap: 100px
+
+    @include por
+        width: 95%
+        min-height: 100%
+        flex-direction: column
+        align-items: center
+        flex-wrap: nowrap
+        gap: 20px
 
     .content-mais
         height: 230px
@@ -256,6 +292,10 @@
     margin-left: 16.3%
     position: relative
     top: 45px
+
+    @include por
+        top: 0
+        margin-left: 15px
 
 .label-errors
     display: flex
